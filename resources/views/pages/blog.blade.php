@@ -8,7 +8,7 @@
             <div class="container">
                 <div class="row no-gutters slider-text justify-content-center align-items-center">
                     <div class="col-md-8 ftco-animate">
-                        <p class="breadcrumbs"><span class="mr-2"><a href="index-2.html">Home</a></span> <span>Blog</span></p>
+                        <p class="breadcrumbs"><span class="mr-2"><a href="{{route('index')}}">Home</a></span> <span>Blog</span></p>
                         <h1 class="bread">Read Our Blog</h1>
                     </div>
                 </div>
@@ -21,7 +21,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="blog-entry ftco-animate d-md-flex">
-                                    <a href="single.html" class="img img-2" style="background-image: url(images/image_1.jpg);"></a>
+                                    <a href="single.html" class="img img-2" style="background-image: url({{asset('images/image_1.jpg')}});"></a>
                                     <div class="text text-2 p-4">
                                         <h3 class="mb-2"><a href="single.html">The Photography Technique</a></h3>
                                         <div class="meta-wrap">
@@ -38,7 +38,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="blog-entry ftco-animate d-md-flex">
-                                    <a href="single.html" class="img img-2" style="background-image: url(images/image_2.jpg);"></a>
+                                    <a href="single.html" class="img img-2" style="background-image: url({{asset('images/image_2.jpg')}});"></a>
                                     <div class="text text-2 p-4">
                                         <h3 class="mb-2"><a href="single.html">The Photography Technique</a></h3>
                                         <div class="meta-wrap">
@@ -55,7 +55,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="blog-entry ftco-animate d-md-flex">
-                                    <a href="single.html" class="img img-2" style="background-image: url(images/image_3.jpg);"></a>
+                                    <a href="single.html" class="img img-2" style="background-image: url({{asset('images/image_3.jpg')}});"></a>
                                     <div class="text text-2 p-4">
                                         <h3 class="mb-2"><a href="single.html">The Photography Technique</a></h3>
                                         <div class="meta-wrap">
@@ -72,7 +72,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="blog-entry ftco-animate d-md-flex">
-                                    <a href="single.html" class="img img-2" style="background-image: url(images/image_4.jpg);"></a>
+                                    <a href="single.html" class="img img-2" style="background-image: url({{asset('images/image_4.jpg')}});"></a>
                                     <div class="text text-2 p-4">
                                         <h3 class="mb-2"><a href="single.html">The Photography Technique</a></h3>
                                         <div class="meta-wrap">
@@ -89,7 +89,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="blog-entry ftco-animate d-md-flex">
-                                    <a href="single.html" class="img img-2" style="background-image: url(images/image_5.jpg);"></a>
+                                    <a href="single.html" class="img img-2" style="background-image: url({{asset('images/image_5.jpg')}}); "></a>
                                     <div class="text text-2 p-4">
                                         <h3 class="mb-2"><a href="single.html">The Photography Technique</a></h3>
                                         <div class="meta-wrap">
@@ -106,7 +106,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="blog-entry ftco-animate d-md-flex">
-                                    <a href="single.html" class="img img-2" style="background-image: url(images/image_6.jpg);"></a>
+                                    <a href="single.html" class="img img-2" style="background-image: url({{asset('images/image_6.jpg')}});"></a>
                                     <div class="text text-2 p-4">
                                         <h3 class="mb-2"><a href="single.html">The Photography Technique</a></h3>
                                         <div class="meta-wrap">
@@ -123,7 +123,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="blog-entry ftco-animate d-md-flex">
-                                    <a href="single.html" class="img img-2" style="background-image: url(images/image_7.jpg);"></a>
+                                    <a href="single.html" class="img img-2" style="background-image: url({{asset('images/image_7.jpg')}});"></a>
                                     <div class="text text-2 p-4">
                                         <h3 class="mb-2"><a href="single.html">The Photography Technique</a></h3>
                                         <div class="meta-wrap">
@@ -140,7 +140,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="blog-entry ftco-animate d-md-flex">
-                                    <a href="single.html" class="img img-2" style="background-image: url(images/image_8.jpg);"></a>
+                                    <a href="single.html" class="img img-2" style="background-image: url({{asset('images/image_8.jpg')}});"></a>
                                     <div class="text text-2 p-4">
                                         <h3 class="mb-2"><a href="single.html">The Photography Technique</a></h3>
                                         <div class="meta-wrap">
@@ -194,7 +194,7 @@
                         <div class="sidebar-box ftco-animate">
                             <h3 class="sidebar-heading">Popular Articles</h3>
                             <div class="block-21 mb-4 d-flex">
-                                <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
+                                <a class="blog-img mr-4" style="background-image: url({{asset('images/image_1.jpg')}});"></a>
                                 <div class="text">
                                     <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control</a></h3>
                                     <div class="meta">
@@ -205,7 +205,7 @@
                                 </div>
                             </div>
                             <div class="block-21 mb-4 d-flex">
-                                <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
+                                <a class="blog-img mr-4" style="background-image: url({{asset('images/image_2.jpg')}});"></a>
                                 <div class="text">
                                     <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control</a></h3>
                                     <div class="meta">
@@ -216,7 +216,7 @@
                                 </div>
                             </div>
                             <div class="block-21 mb-4 d-flex">
-                                <a class="blog-img mr-4" style="background-image: url(images/image_3.jpg);"></a>
+                                <a class="blog-img mr-4" style="background-image: url({{asset('images/image_3.jpg')}});"></a>
                                 <div class="text">
                                     <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control</a></h3>
                                     <div class="meta">
@@ -240,7 +240,7 @@
                                 <a href="#" class="tag-cloud-link">food</a>
                             </ul>
                         </div>
-                        <div class="sidebar-box subs-wrap img" style="background-image: url(images/bg_1.jpg);">
+                        <div class="sidebar-box subs-wrap img" style="background-image: url({{asset('images/bg_1.jpg')}});">
                             <div class="overlay"></div>
                             <h3 class="mb-4 sidebar-heading">Newsletter</h3>
                             <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia</p>

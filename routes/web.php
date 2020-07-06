@@ -24,3 +24,6 @@ Route::get('/blog', 'PagesController@blog')->name('blog');
 Route::get('/collection', 'PagesController@collection')->name('collection');
 Route::get('/contact', 'PagesController@contact')->name('contact');
 Route::get('/services', 'PagesController@services')->name('services');
+
+//Blogs
+Route::resource('blogs', 'BlogsController');
