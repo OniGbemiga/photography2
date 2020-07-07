@@ -10,6 +10,7 @@
                     <div class="col-md-8 ftco-animate">
                         <p class="breadcrumbs"><span class="mr-2"><a href="{{route('index')}}">Home</a></span> <span>Blog</span></p>
                         <h1 class="bread">Read Our Blog</h1>
+                            <a href="blogs/create"><button class="mt-2 btn btn-white submit">ADD POST</button></a>
                     </div>
                 </div>
             </div>
@@ -21,13 +22,13 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="blog-entry ftco-animate d-md-flex">
-                                    <a href="single.html" class="img img-2" style="background-image: url({{asset('images/image_1.jpg')}});"></a>
+                                    <a href="blogs/show" class="img img-2" style="background-image: url({{asset('images/image_1.jpg')}});"></a>
                                     <div class="text text-2 p-4">
-                                        <h3 class="mb-2"><a href="single.html">The Photography Technique</a></h3>
+                                        <h3 class="mb-2"><a href="blogs/show">The Photography Technique</a></h3>
                                         <div class="meta-wrap">
                                             <p class="meta">
                                                 <span>Dec 14, 2018</span>
-                                                <span><a href="single.html">Photography</a></span>
+                                                <span><a href="blogs/show">Photography</a></span>
                                                 <span>5 Comment</span>
                                             </p>
                                         </div>
@@ -38,13 +39,13 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="blog-entry ftco-animate d-md-flex">
-                                    <a href="single.html" class="img img-2" style="background-image: url({{asset('images/image_2.jpg')}});"></a>
+                                    <a href="blogs/show" class="img img-2" style="background-image: url({{asset('images/image_2.jpg')}});"></a>
                                     <div class="text text-2 p-4">
-                                        <h3 class="mb-2"><a href="single.html">The Photography Technique</a></h3>
+                                        <h3 class="mb-2"><a href="blogs/show">The Photography Technique</a></h3>
                                         <div class="meta-wrap">
                                             <p class="meta">
                                                 <span>Dec 14, 2018</span>
-                                                <span><a href="single.html">Photography</a></span>
+                                                <span><a href="blogs/show">Photography</a></span>
                                                 <span>5 Comment</span>
                                             </p>
                                         </div>
@@ -55,13 +56,13 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="blog-entry ftco-animate d-md-flex">
-                                    <a href="single.html" class="img img-2" style="background-image: url({{asset('images/image_3.jpg')}});"></a>
+                                    <a href="blogs/show" class="img img-2" style="background-image: url({{asset('images/image_3.jpg')}});"></a>
                                     <div class="text text-2 p-4">
-                                        <h3 class="mb-2"><a href="single.html">The Photography Technique</a></h3>
+                                        <h3 class="mb-2"><a href="blogs/show">The Photography Technique</a></h3>
                                         <div class="meta-wrap">
                                             <p class="meta">
                                                 <span>Dec 14, 2018</span>
-                                                <span><a href="single.html">Photography</a></span>
+                                                <span><a href="blogs/show">Photography</a></span>
                                                 <span>5 Comment</span>
                                             </p>
                                         </div>
@@ -72,13 +73,13 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="blog-entry ftco-animate d-md-flex">
-                                    <a href="single.html" class="img img-2" style="background-image: url({{asset('images/image_4.jpg')}});"></a>
+                                    <a href="blogs/show" class="img img-2" style="background-image: url({{asset('images/image_4.jpg')}});"></a>
                                     <div class="text text-2 p-4">
-                                        <h3 class="mb-2"><a href="single.html">The Photography Technique</a></h3>
+                                        <h3 class="mb-2"><a href="blogs/show">The Photography Technique</a></h3>
                                         <div class="meta-wrap">
                                             <p class="meta">
                                                 <span>Dec 14, 2018</span>
-                                                <span><a href="single.html">Photography</a></span>
+                                                <span><a href="blogs/show">Photography</a></span>
                                                 <span>5 Comment</span>
                                             </p>
                                         </div>
@@ -89,13 +90,13 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="blog-entry ftco-animate d-md-flex">
-                                    <a href="single.html" class="img img-2" style="background-image: url({{asset('images/image_5.jpg')}}); "></a>
+                                    <a href="blogs/show" class="img img-2" style="background-image: url({{asset('images/image_5.jpg')}}); "></a>
                                     <div class="text text-2 p-4">
-                                        <h3 class="mb-2"><a href="single.html">The Photography Technique</a></h3>
+                                        <h3 class="mb-2"><a href="blogs/show">The Photography Technique</a></h3>
                                         <div class="meta-wrap">
                                             <p class="meta">
                                                 <span>Dec 14, 2018</span>
-                                                <span><a href="single.html">Photography</a></span>
+                                                <span><a href="blogs/show">Photography</a></span>
                                                 <span>5 Comment</span>
                                             </p>
                                         </div>
@@ -106,13 +107,13 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="blog-entry ftco-animate d-md-flex">
-                                    <a href="single.html" class="img img-2" style="background-image: url({{asset('images/image_6.jpg')}});"></a>
+                                    <a href="blogs/show" class="img img-2" style="background-image: url({{asset('images/image_6.jpg')}});"></a>
                                     <div class="text text-2 p-4">
-                                        <h3 class="mb-2"><a href="single.html">The Photography Technique</a></h3>
+                                        <h3 class="mb-2"><a href="blogs/show">The Photography Technique</a></h3>
                                         <div class="meta-wrap">
                                             <p class="meta">
                                                 <span>Dec 14, 2018</span>
-                                                <span><a href="single.html">Photography</a></span>
+                                                <span><a href="blogs/show">Photography</a></span>
                                                 <span>5 Comment</span>
                                             </p>
                                         </div>
@@ -123,13 +124,13 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="blog-entry ftco-animate d-md-flex">
-                                    <a href="single.html" class="img img-2" style="background-image: url({{asset('images/image_7.jpg')}});"></a>
+                                    <a href="blogs/show" class="img img-2" style="background-image: url({{asset('images/image_7.jpg')}});"></a>
                                     <div class="text text-2 p-4">
-                                        <h3 class="mb-2"><a href="single.html">The Photography Technique</a></h3>
+                                        <h3 class="mb-2"><a href="blogs/show">The Photography Technique</a></h3>
                                         <div class="meta-wrap">
                                             <p class="meta">
                                                 <span>Dec 14, 2018</span>
-                                                <span><a href="single.html">Photography</a></span>
+                                                <span><a href="blogs/show">Photography</a></span>
                                                 <span>5 Comment</span>
                                             </p>
                                         </div>
@@ -140,13 +141,13 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="blog-entry ftco-animate d-md-flex">
-                                    <a href="single.html" class="img img-2" style="background-image: url({{asset('images/image_8.jpg')}});"></a>
+                                    <a href="blogs/show" class="img img-2" style="background-image: url({{asset('images/image_8.jpg')}});"></a>
                                     <div class="text text-2 p-4">
-                                        <h3 class="mb-2"><a href="single.html">The Photography Technique</a></h3>
+                                        <h3 class="mb-2"><a href="blogs/show">The Photography Technique</a></h3>
                                         <div class="meta-wrap">
                                             <p class="meta">
                                                 <span>Dec 14, 2018</span>
-                                                <span><a href="single.html">Photography</a></span>
+                                                <span><a href="blogs/show">Photography</a></span>
                                                 <span>5 Comment</span>
                                             </p>
                                         </div>

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Faker\Provider\Image;
 use Illuminate\Http\Request;
+use App\Blog;
 
 class BlogsController extends Controller
 {
@@ -23,7 +25,7 @@ class BlogsController extends Controller
      */
     public function create()
     {
-        //
+        return view('blogs.create');
     }
 
     /**
@@ -34,7 +36,11 @@ class BlogsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $blog = Blog::create($this->validateRequest($request));
+        $this->storeImage($blog);
+
+//        dd($blog);
+        return view('pages.blog');
     }
 
     /**
@@ -45,7 +51,7 @@ class BlogsController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('blogs/show');
     }
 
     /**
@@ -80,5 +86,24 @@ class BlogsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    private function validateRequest($request){
+        return request()->validate([
+            'blog_image' => 'sometimes|File|image|max:5000',
+            'title' => 'required|unique:blogs|max:50',
+            'message' => 'required',
+        ]);
+    }
+
+    private function storeImage($blog){
+        if (request()->hasFile('blog_image')){
+            $blog->update([
+                'blog_image' => request()->blog_image->store('uploads' , 'public'),
+            ]);
+            $blog_image = \Intervention\Image\Facades\Image::make(public_path('storage/' . $blog->blog_image));
+//                ->resize(200,200);
+            $blog_image->save();
+        }
     }
 }
