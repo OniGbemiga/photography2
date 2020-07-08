@@ -15,20 +15,6 @@
         </section>
 
         <section>
-{{--            <div>--}}
-{{--                <form>--}}
-{{--                    <div class="form-group">--}}
-{{--                        <input type="file" class="form-control">--}}
-{{--                    </div>--}}
-{{--                    <div class="form-group">--}}
-{{--                        <input type="text" placeholder="Title" class="form-control">--}}
-{{--                    </div>--}}
-{{--                    <div class="form-group">--}}
-{{--                        <input type="text" placeholder="Body" class="form-control">--}}
-{{--                    </div>--}}
-{{--                </form>--}}
-{{--            </div>--}}
-
                 <div class="col-md-12">
                     <form action="/blogs" method="POST" enctype="multipart/form-data" class="bg-light p-5 contact-form">
                         @csrf

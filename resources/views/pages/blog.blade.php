@@ -20,6 +20,36 @@
                 <div class="row d-flex">
                     <div class="col-lg-8">
                         <div class="row">
+
+                            @foreach($blogs as $blog)
+
+                                <div class="col-md-12">
+                                    <div class="blog-entry ftco-animate d-md-flex">
+                                        <a href="blogs/{{$blog->id}}" class="img img-2" style="background-image: url({{asset('storage/'.$blog->blog_image)}});"></a>
+                                        <div class="text text-2 p-4">
+                                            <h3 class="mb-2"><a href="blogs/{{$blog->id}}">{{$blog->title}}</a></h3>
+                                            <div class="meta-wrap">
+                                                <p class="meta">
+                                                    <span>{{$blog->created_at}}</span>
+                                                    <span><a href="blogs/{{$blog->id}}">Photography</a></span>
+                                                    <span>5 Comment</span>
+                                                </p>
+                                            </div>
+                                            <p class="mb-4">
+                                                @if(strlen($blog->message)>=93)
+                                                    {{substr($blog->message, 0,93)}}
+                                                <p><a href="blogs/{{$blog->id}}" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
+                                            </p>
+                                            @else
+                                                {{$blog->message}}
+                                            <p><a href="blogs/{{$blog->id}}" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+
+                            @endforeach
+
                             <div class="col-md-12">
                                 <div class="blog-entry ftco-animate d-md-flex">
                                     <a href="blogs/show" class="img img-2" style="background-image: url({{asset('images/image_1.jpg')}});"></a>
@@ -160,6 +190,7 @@
                         <div class="row">
                             <div class="col">
                                 <div class="block-27">
+{{--                                            {{$blogs->links()}}--}}
                                     <ul>
                                         <li><a href="#">&lt;</a></li>
                                         <li class="active"><span>1</span></li>

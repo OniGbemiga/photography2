@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 //Pages
 Route::get('/', 'PagesController@index')->name('index');
 Route::get('/about', 'PagesController@about')->name('about');
-Route::get('/blog', 'PagesController@blog')->name('blog');
+Route::get('/blogs', 'PagesController@blog');
 Route::get('/collection', 'PagesController@collection')->name('collection');
 Route::get('/contact', 'PagesController@contact')->name('contact');
 Route::get('/services', 'PagesController@services')->name('services');

@@ -34,7 +34,7 @@
                 <li><a href="{{route('collection')}}">Collection</a></li>
                 <li><a href="{{route('about')}}">About Me</a></li>
                 <li><a href="{{route('services')}}">My Services</a></li>
-                <li><a href="{{route('blog')}}">Blog</a></li>
+                <li><a href="/blogs">Blog</a></li>
                 <li><a href="{{route('contact')}}">Contact</a></li>
             </ul>
         </nav>

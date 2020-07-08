@@ -8,7 +8,7 @@
             <div class="container">
                 <div class="row no-gutters slider-text justify-content-center align-items-center">
                     <div class="col-md-8 ftco-animate">
-                        <p class="breadcrumbs"><span class="mr-2"><a href="{{route('index')}}">Home</a></span> <span class="mr-2"><a href="{{route('blog')}}">Blog</a></span> <span>Blog Single</span></p>
+                        <p class="breadcrumbs"><span class="mr-2"><a href="{{route('index')}}">Home</a></span> <span class="mr-2"><a href="/blogs">Blog</a></span> <span>Blog Single</span></p>
                         <h1 class="bread">Blog Single</h1>
                     </div>
                 </div>
@@ -18,10 +18,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 ftco-animate">
-                        <h2 class="mb-3 font-weight-bold">Innovative Agency</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, eius mollitia suscipit, quisquam doloremque distinctio perferendis et doloribus unde architecto optio laboriosam porro adipisci sapiente officiis nemo accusamus ad praesentium? Esse minima nisi et. Dolore perferendis, enim praesentium omnis, iste doloremque quia officia optio deserunt molestiae voluptates soluta architecto tempora.</p>
+                        <h2 class="mb-3 font-weight-bold">{{$blogs->title}}</h2>
+                        <p>{{$blogs->message}}</p>
                         <p>
-                            <img src="{{asset('images/image_1.jpg')}}" alt="" class="img-fluid">
+                            <img src="{{asset('storage/'.$blogs->blog_image)}}" alt="" class="img-fluid">
                         </p>
                         <p>Molestiae cupiditate inventore animi, maxime sapiente optio, illo est nemo veritatis repellat sunt doloribus nesciunt! Minima laborum magni reiciendis qui voluptate quisquam voluptatem soluta illo eum ullam incidunt rem assumenda eveniet eaque sequi deleniti tenetur dolore amet fugit perspiciatis ipsa, odit. Nesciunt dolor minima esse vero ut ea, repudiandae suscipit!</p>
                         <h2 class="mb-3 mt-5 font-weight-bold">#2. Creative WordPress Themes</h2>
