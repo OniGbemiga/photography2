@@ -15,7 +15,7 @@ class BlogsController extends Controller
      */
     public function index()
     {
-        $blog = Blog::orderBy('id','desc')->paginate(1);
+        $blog = Blog::latest()->get();
         //dd($blog);
         return view('pages.blog')->with('blogs',$blog);
     }
@@ -40,6 +40,7 @@ class BlogsController extends Controller
     {
         $blog = Blog::create($this->validateRequest($request));
         $this->storeImage($blog);
+        $this->storeFile($blog);
 
 //        dd($blog);
         return redirect('blogs')->with('Successful');
@@ -66,7 +67,8 @@ class BlogsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $blog = Blog::find($id);
+        return view('blogs.edit')->with('blogs',$blog);
     }
 
     /**
@@ -95,6 +97,7 @@ class BlogsController extends Controller
     private function validateRequest($request){
         return request()->validate([
             'blog_image' => 'sometimes|File|image|max:500000',
+            'blog_file' => 'File',
             'title' => 'required|unique:blogs|max:50|min:2',
             'message' => 'required',
         ]);
@@ -108,6 +111,20 @@ class BlogsController extends Controller
             $blog_image = \Intervention\Image\Facades\Image::make(public_path('storage/' . $blog->blog_image));
                 //->fit(800,500);
             $blog_image->save();
+        }
+    }
+
+    private function storeFile($blog){
+        if ( !is_dir(public_path('/blog_file'))){
+            mkdir(public_path('/blog_file'), 0777);
+            $blog->update([
+                'blog_file' => \request()->blog_file->store('blog_file','public'),
+            ]);
+        }
+        else{
+            $blog->update([
+                'blog_file' => \request()->blog_file->store('blog_file','public'),
+            ]);
         }
     }
 }

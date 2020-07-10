@@ -16,28 +16,16 @@
 
         <section>
                 <div class="col-md-12">
-                    <form action="/blogs" method="POST" enctype="multipart/form-data" class="bg-light p-5 contact-form">
+                    <form action="/blogs" method="GET" enctype="multipart/form-data" class="bg-light p-5 contact-form">
                         @csrf
                         <div class="form-group">
-                            <input type="file" name="blog_image" class="form-control" placeholder="">
-                            @error('blog_image')
-                                <small class="text-danger">{{$message}}</small>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <input type="file" name="blog_file" class="form-control" placeholder="">
-                            @error('blog_file')
-                                <small class="text-danger">{{$message}}</small>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="title" class="form-control" placeholder="Title Of Post" value="{{old('title')}}">
+                            <input type="text" name="title" class="form-control" placeholder="Title Of Post" value="{{$blogs->title}}">
                             @error('title')
                             <small class="text-danger">{{$message}}</small>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <textarea name="message" id="" cols="30" rows="7" class="form-control" placeholder="Message">{{old('message')}}</textarea>
+                            <textarea name="message" id="" cols="30" rows="7" class="form-control" placeholder="Message">{{readfile('storage/'.$blogs->blog_file)}}</textarea>
                             @error('message')
                             <small class="text-danger">{{$message}}</small>
                             @enderror
