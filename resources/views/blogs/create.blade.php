@@ -24,12 +24,12 @@
                                 <small class="text-danger">{{$message}}</small>
                             @enderror
                         </div>
-                        <div class="form-group">
-                            <input type="file" name="blog_file" class="form-control" placeholder="">
-                            @error('blog_file')
-                                <small class="text-danger">{{$message}}</small>
-                            @enderror
-                        </div>
+{{--                        <div class="form-group">--}}
+{{--                            <input type="file" name="blog_file" class="form-control" placeholder="">--}}
+{{--                            @error('blog_file')--}}
+{{--                                <small class="text-danger">{{$message}}</small>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
                         <div class="form-group">
                             <input type="text" name="title" class="form-control" placeholder="Title Of Post" value="{{old('title')}}">
                             @error('title')
@@ -37,7 +37,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <textarea name="message" id="" cols="30" rows="7" class="form-control" placeholder="Message">{{old('message')}}</textarea>
+                            <textarea name="message" id="summernote" cols="30" rows="7" class="form-control" placeholder="Message">{{old('message')}}</textarea>
                             @error('message')
                             <small class="text-danger">{{$message}}</small>
                             @enderror

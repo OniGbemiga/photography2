@@ -25,7 +25,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <textarea name="message" id="" cols="30" rows="7" class="form-control" placeholder="Message">{{readfile('storage/'.$blogs->blog_file)}}</textarea>
+                            <textarea name="message" id="" cols="30" rows="7" class="form-control" placeholder="Message">{{($blogs->message)}}</textarea>
                             @error('message')
                             <small class="text-danger">{{$message}}</small>
                             @enderror
