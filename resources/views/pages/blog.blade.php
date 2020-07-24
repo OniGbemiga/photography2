@@ -36,14 +36,9 @@
                                                 </p>
                                             </div>
                                             <p class="mb-4">
-                                                @if(strlen($blog->message)>93)
-                                                    {{substr($blog->message, 0,93)}}....
+                                                {{$blog->short_message}}
                                                 <p><a href="blogs/{{$blog->id}}" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
                                             </p>
-                                            @else
-                                                {{$blog->message}}
-                                            <p><a href="blogs/{{$blog->id}}" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
-                                            @endif
                                         </div>
                                     </div>
                                 </div>

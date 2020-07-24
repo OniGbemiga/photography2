@@ -27,3 +27,6 @@ Route::get('/services', 'PagesController@services')->name('services');
 
 //Blogs
 Route::resource('blogs', 'BlogsController');
+
+//Contact
+Route::post('contacts', 'ContactController@store')->name('contactus');
