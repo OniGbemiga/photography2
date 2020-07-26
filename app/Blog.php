@@ -3,57 +3,20 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Http\Helpers\Pagination;
+use DB;
 
 class Blog extends Model
 {
     protected $guarded = [];
 
-    public $current_page;
-    public $per_page;
-    public $total_count;
-
-    public function __construct($page=1,$per_page=5,$total_count=0)
-    {
-        $this->current_page = (int)$page;
-        $this->per_page = (int)$per_page;
-        $this->total_count = (int)$total_count;
-    }
-
-    public function offset()
-    {
-        return ($this->current_page - 1) * $this->per_page;
-    }
-
-    public function total_pages()
-    {
-        return ceil($this->total_count/$this->per_page);
-    }
-
-    public function previous_page()
-    {
-        return $this->current_page-1;
-    }
-
-    public function next_page()
-    {
-        return $this->current_page+1;
-    }
-
-    public function has_previous_page()
-    {
-        return $this->previous_page() >= 1 ? true : false;
-    }
-
-    public function has_next_page()
-    {
-        return $this->next_page() <= $this->total_pages ? true : false;
-    }
-
-    public static function count_all()
-    {
-        $page = !empty($_GET['page']) ? (int)$_GET['page'] : 1;
-        $per_page = 3;
-        $sql = Blog::count();
-        //dd($sql);
-    }
+    // public static function count_all()
+    // {
+    //     $page = !empty($_GET['page']) ? (int)$_GET['page'] : 1;
+    //     $per_page = 3;
+    //     //$sql = Blog::count();
+    //     $pagination = new Pagination();
+    //     $sql = DB::select("SELECT * FROM blogs LIMIT {$per_page} OFFSET {$pagination->offset()}");
+    //     //dd($sql);   
+    // }
 }
