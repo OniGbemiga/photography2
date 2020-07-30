@@ -44,7 +44,7 @@
 
                             @endforeach
                         </div>
-                        <div class="form-group">
+                        <div class="col-12 d-flex justify-content-center">
                             {{$blogs->links()}}
                         </div>
                     </div>

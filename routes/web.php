@@ -16,18 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/admin', function () {
    return view('admin.dashboard');
 });
-Route::get('/admin/post', function () {
-   return view('admin.post');
-});
-Route::get('/admin/form/create', function () {
-   return view('admin.form.create');
-});
-Route::get('/admin/form/edit_delete', function () {
-   return view('admin.form.edit_delete');
-});
-Route::get('/admin/form/edit_post', function () {
-   return view('admin.form.edit_post');
-});
 Route::get('/admin/calender', function () {
    return view('admin.calender');
 });
@@ -64,6 +52,15 @@ Route::get('/admin/lockscreen', function () {
 Route::get('/admin/contact', function () {
    return view('admin.contact');
 });
+
+//AdminForm
+Route::get('/admin/post','AdminFormController@adminPost');
+Route::get('/admin/form/create','AdminFormController@adminCreate');
+Route::post('/admins','AdminFormController@adminStore')->name('adminStore');
+Route::get('/admin/form/edit_delete','AdminFormController@adminEditDelete');
+Route::get('/admin/form/edit_post/{admin}','AdminFormController@adminEditPost');
+Route::patch('/admins/{admin}','AdminFormController@adminUpdatePost')->name('adminUpdate');
+Route::delete('/admins/{admin}','AdminFormController@adminDeletePost')->name('adminDelete');
 
 //Pages
 Route::get('/', 'PagesController@index')->name('index');

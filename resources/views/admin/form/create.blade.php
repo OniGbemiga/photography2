@@ -25,7 +25,7 @@
 
     <!-- Main content -->
     <section class="content">
-      <form action="/blogs" method="post" enctype="multipart/form-data">
+      <form action="{{route('adminStore')}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
           <label for="inputName1">Cover Image</label>
