@@ -10,7 +10,6 @@
                     <div class="col-md-8 ftco-animate">
                         <p class="breadcrumbs"><span class="mr-2"><a href="{{route('index')}}">Home</a></span> <span>Blog</span></p>
                         <h1 class="bread">Read Our Blog</h1>
-                            <a href="blogs/create"><button class="mt-2 btn btn-white submit">ADD POST</button></a>
                     </div>
                 </div>
             </div>
