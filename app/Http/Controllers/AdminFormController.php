@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Storage;
 class AdminFormController extends Controller
 {
     public function adminPost(){
-        return view('admin.post');
+        $blogs = Blog::latest()->get();
+        return view('admin.post')->with('blogs',$blogs);
     }
 
     public function adminCreate(){

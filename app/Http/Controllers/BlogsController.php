@@ -17,7 +17,7 @@ class BlogsController extends Controller
     public function index()
     {
         //$blogs = Blog::count_all();
-        $blog = Blog::latest()->paginate(8);
+        $blog = Blog::latest()->paginate(8, ['*'], 'blog_page');
         return view('pages.blog')->with('blogs',$blog);
     }
 
