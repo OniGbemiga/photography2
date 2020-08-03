@@ -63,7 +63,7 @@
                       <td>{{$blog->id}}</td>
                       <td>John Doe</td>
                       <td>{{$blog->created_at}}</td>
-                      <td><span class="tag tag-success">{{$blog->title}}</span></td>
+                      <td><span class="tag tag-success"><a href="/blogs/{{$blog->id}}">{{$blog->title}}</a></span></td>
                       <td>{{$blog->short_message}}</td>
                       <td><a href="/admin/form/edit_post/{{$blog->id}}"><button class="btn-warning">Edit</button></a></td>
                       <form action="{{route('adminDelete', ['admin' => $blog->id])}}" method="POST">

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Gallery;
 
 use Illuminate\Http\Request;
 
@@ -19,7 +20,8 @@ class PagesController extends Controller
     }
 
     public function collection(){
-        return view('pages.collection');
+        $images = Gallery::latest()->paginate(24, ['*'], 'pictures_per_page');
+        return view('pages.collection')->with('images',$images);
     }
 
     public function contact(){
