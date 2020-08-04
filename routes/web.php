@@ -22,15 +22,6 @@ Route::get('/admin', function () {
 Route::get('/admin/calender', function () {
    return view('admin.calender');
 });
-Route::get('/admin/mail/inbox', function () {
-   return view('admin.mail.inbox');
-});
-Route::get('/admin/mail/compose', function () {
-   return view('admin.mail.compose');
-});
-Route::get('/admin/mail/read', function () {
-   return view('admin.mail.read');
-});
 Route::get('/admin/profile', function () {
    return view('admin.profile');
 });
@@ -65,6 +56,12 @@ Route::delete('/admins/{admin}','AdminFormController@adminDeletePost')->name('ad
 //AdminGallery. The store method is in the api
 Route::get('/admin/gallery', 'AdminGalleryController@adminGallery');
 Route::delete('/images/{gallery}', 'AdminGalleryController@adminGalleryDelete');
+
+//AdminMail
+Route::get('/admin/mail/inbox', 'AdminMailController@adminMailInbox');
+Route::get('/admin/mail/compose', 'AdminMailController@adminMailCompose');
+Route::get('/admin/mail/read/{admin}', 'AdminMailController@adminMailRead');
+Route::delete('/admins/{admin}', 'AdminMailController@adminMailDelete')->name('adminMailDelete');
 
 //Pages
 Route::get('/', 'PagesController@index')->name('index');
