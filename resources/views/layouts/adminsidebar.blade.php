@@ -113,9 +113,12 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" role="button">
-            sign-out
-        </a>
+        <form action="{{route('logout')}}" method="POST">
+          @csrf
+          <button class="btn btn-outline-danger">
+              sign-out
+          </button>
+        </form>
       </li>
     </ul>
   </nav>

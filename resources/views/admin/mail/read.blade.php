@@ -22,7 +22,7 @@
       </div><!-- /.container-fluid -->
     </section>
 
-    <form action="{{route('adminMailDelete', ['admin' => $contacts->id])}}" method="POST" id="delete1">
+    <form action="{{route('adminMailDelete', ['contact' => $contacts->id])}}" method="POST" id="delete1">
       @method('DELETE')
       @csrf
       

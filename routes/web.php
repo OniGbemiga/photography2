@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/admin', function () {
    return view('admin.dashboard');
-});
+})->middleware('auth');
 Route::get('/admin/calender', function () {
    return view('admin.calender');
 });
@@ -44,6 +44,11 @@ Route::get('/admin/contact', function () {
    return view('admin.contact');
 });
 
+//AdminRegister
+Route::post('register', 'AdminRegisterController@register')->name('register');
+Route::post('/admin/auth/login', 'AdminLoginController@login')->name('login');
+Route::post('/logout', 'AdminLoginController@logout')->name('logout');
+
 //AdminForm
 Route::get('/admin/post','AdminFormController@adminPost');
 Route::get('/admin/form/create','AdminFormController@adminCreate');
@@ -61,7 +66,7 @@ Route::delete('/images/{gallery}', 'AdminGalleryController@adminGalleryDelete');
 Route::get('/admin/mail/inbox', 'AdminMailController@adminMailInbox');
 Route::get('/admin/mail/compose', 'AdminMailController@adminMailCompose');
 Route::get('/admin/mail/read/{admin}', 'AdminMailController@adminMailRead');
-Route::delete('/admins/{admin}', 'AdminMailController@adminMailDelete')->name('adminMailDelete');
+Route::delete('/mails/{contact}', 'AdminMailController@adminMailDelete')->name('adminMailDelete');
 
 //Pages
 Route::get('/', 'PagesController@index')->name('index');
