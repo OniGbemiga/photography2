@@ -76,7 +76,7 @@
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">
-              <input type="checkbox" id="agreeTerms" name="terms" required value="{{old('terms') ? true : false }}">
+              <input type="checkbox" id="agreeTerms" name="terms" required {{old('terms') ? true : false }}>
               <label for="agreeTerms">
                I agree to the <a href="#">terms</a>
               </label>

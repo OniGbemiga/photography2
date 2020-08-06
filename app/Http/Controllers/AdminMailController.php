@@ -7,6 +7,11 @@ use App\Contact;
 
 class AdminMailController extends Controller
 {
+    public function __construct()
+     {
+         $this->middleware('auth');
+     }
+
     public function adminMailInbox(){
 
         $contacts = Contact::latest()->get();

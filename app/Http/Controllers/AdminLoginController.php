@@ -16,6 +16,10 @@ class AdminLoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    public function loginForm(){
+        return view('/admin/auth/login');
+    }
+
     public function login(Request $request)
     {
         $validate = $this->validate($request, [
@@ -45,6 +49,5 @@ class AdminLoginController extends Controller
     {
 
         Auth::logout();
-        return back()->with('Success', 'You logged out');
     }
 }

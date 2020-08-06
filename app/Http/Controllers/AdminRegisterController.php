@@ -11,6 +11,10 @@ use App\User;
 
 class AdminRegisterController extends Controller
 {
+    public function registerForm(){
+        return view('/admin/auth/register');
+    }
+
     public function register(Request $request)
     {
         $this->validate($request, [
@@ -19,7 +23,7 @@ class AdminRegisterController extends Controller
             'password' => ['required', 'string', 'min:8','confirmed'],
         ]);
 
-        if (Auth::attempt('terms' => 1)) {
+        if (Auth::attempt('terms' == 1)) {
             
             $user = new User;
             $user->name = $request->input('name');

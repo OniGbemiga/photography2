@@ -25,41 +25,37 @@ Route::get('/admin/calender', function () {
 Route::get('/admin/profile', function () {
    return view('admin.profile');
 });
-Route::get('/admin/auth/login', function () {
-   return view('admin.auth.login');
-});
-Route::get('/admin/auth/register', function () {
-   return view('admin.auth.register');
-});
-Route::get('/admin/auth/recover-password', function () {
-   return view('admin.auth.recover-password');
-});
-Route::get('/admin/auth/forgot-password', function () {
-   return view('admin.auth.forgot-password');
-});
-Route::get('/admin/lockscreen', function () {
-   return view('admin.lockscreen');
-});
+// Route::get('/admin/auth/recover-password', function () {
+//    return view('admin.auth.recover-password');
+// });
+// Route::get('/admin/auth/forgot-password', function () {
+//    return view('admin.auth.forgot-password');
+// });
+// Route::get('/admin/lockscreen', function () {
+//    return view('admin.lockscreen');
+// });
 Route::get('/admin/contact', function () {
    return view('admin.contact');
 });
 
 //AdminRegister
+Route::get('/admin/auth/login', 'AdminLoginController@loginForm');
+Route::post('login', 'AdminLoginController@login')->name('login');
+Route::get('/admin/auth/register', 'AdminRegisterController@registerForm');
 Route::post('register', 'AdminRegisterController@register')->name('register');
-Route::post('/admin/auth/login', 'AdminLoginController@login')->name('login');
-Route::post('/logout', 'AdminLoginController@logout')->name('logout');
+Route::get('/logout', 'AdminLoginController@logout')->name('logout');
 
 //AdminForm
 Route::get('/admin/post','AdminFormController@adminPost');
-Route::get('/admin/form/create','AdminFormController@adminCreate');
+Route::get('/admin/form/create','AdminFormController@adminCreate')->middleware(['auth', 'password.confirm']);
 Route::post('/admins','AdminFormController@adminStore')->name('adminStore');
-Route::get('/admin/form/edit_delete','AdminFormController@adminEditDelete');
-Route::get('/admin/form/edit_post/{admin}','AdminFormController@adminEditPost');
+Route::get('/admin/form/edit_delete','AdminFormController@adminEditDelete')->middleware(['auth', 'password.confirm']);
+Route::get('/admin/form/edit_post/{admin}','AdminFormController@adminEditPost')->middleware(['auth', 'password.confirm']);
 Route::patch('/admins/{admin}','AdminFormController@adminUpdatePost')->name('adminUpdate');
 Route::delete('/admins/{admin}','AdminFormController@adminDeletePost')->name('adminDelete');
 
 //AdminGallery. The store method is in the api
-Route::get('/admin/gallery', 'AdminGalleryController@adminGallery');
+Route::get('/admin/gallery', 'AdminGalleryController@adminGallery')->middleware(['auth', 'password.confirm']);
 Route::delete('/images/{gallery}', 'AdminGalleryController@adminGalleryDelete');
 
 //AdminMail

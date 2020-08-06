@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -30,15 +30,21 @@
     <!-- /.lockscreen-image -->
 
     <!-- lockscreen credentials (contains the form) -->
-    <form class="lockscreen-credentials">
+    <form class="lockscreen-credentials" action="" method="POST">
+      @csrf
       <div class="input-group">
-        <input type="password" class="form-control" placeholder="password">
+        <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="password" required autocomplete="current-password">
 
         <div class="input-group-append">
-          <button type="button" class="btn">
+          <button type="submit" class="btn">
             <i class="fas fa-arrow-right text-muted"></i>
           </button>
         </div>
+        @error('password')
+          <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+          </span>
+        @enderror
       </div>
     </form>
     <!-- /.lockscreen credentials -->
@@ -63,4 +69,4 @@
 <!-- Bootstrap 4 -->
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+</html> --}}
