@@ -19,4 +19,8 @@ class Blog extends Model
     //     $sql = DB::select("SELECT * FROM blogs LIMIT {$per_page} OFFSET {$pagination->offset()}");
     //     //dd($sql);   
     // }
+
+    public function comments(){
+        return $this->hasMany('App\Comment');
+    }
 }

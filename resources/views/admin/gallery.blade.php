@@ -66,4 +66,7 @@
   </div>
   <!-- /.content-wrapper -->
 
+  <!-- vuejs -->
+<script src="{{ mix('/js/app.js') }}"></script>
+
 @endsection

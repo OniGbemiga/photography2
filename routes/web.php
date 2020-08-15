@@ -78,6 +78,9 @@ Route::resource('blogs', 'BlogsController');
 //Contact
 Route::post('contacts', 'ContactController@store')->name('contactus');
 
+//Comments
+Route::post('/comments', 'CommentController@commentStore')->name('comment');
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
