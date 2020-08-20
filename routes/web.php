@@ -22,9 +22,9 @@ Route::get('/admin', function () {
 Route::get('/admin/calender', function () {
    return view('admin.calender');
 });
-Route::get('/admin/profile', function () {
-   return view('admin.profile');
-});
+// Route::get('/admin/profile', function () {
+//    return view('admin.profile');
+// });
 // Route::get('/admin/auth/recover-password', function () {
 //    return view('admin.auth.recover-password');
 // });
@@ -63,6 +63,10 @@ Route::get('/admin/mail/inbox', 'AdminMailController@adminMailInbox');
 Route::get('/admin/mail/compose', 'AdminMailController@adminMailCompose');
 Route::get('/admin/mail/read/{admin}', 'AdminMailController@adminMailRead');
 Route::delete('/mails/{contact}', 'AdminMailController@adminMailDelete')->name('adminMailDelete');
+
+//AdminProfile
+Route::get('/admin/profile', 'AdminProfileController@index');
+Route::post('/admin/profiles', 'AdminProfileController@store')->name('adminProfileStore');
 
 //Pages
 Route::get('/', 'PagesController@index')->name('index');

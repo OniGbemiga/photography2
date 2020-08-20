@@ -58,42 +58,25 @@
                             <img class="img-fluid pad" src="/storage/{{$blog->blog_image}}" alt="Photo">
 
                             <p>{{$blog->short_message}}</p>
-                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-share"></i> Share</button>
-                            <button type="button" class="btn btn-default btn-sm"><i class="far fa-thumbs-up"></i> Like</button>
-                            <span class="float-right text-muted">127 likes - 3 comments</span>
+                            <span class="float-right text-muted">{{count($blog->comments)}} comments</span>
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer card-comments">
-                            <div class="card-comment">
-                                <!-- User image -->
-                                <img class="img-circle img-sm" src="../dist/img/user3-128x128.jpg" alt="User Image">
+                            @foreach ($blog->comments as $comment)    
+                                <div class="card-comment">
+                                    <!-- User image -->
+                                    <img class="img-circle img-sm" src="../dist/img/user3-128x128.jpg" alt="User Image">
 
-                                <div class="comment-text">
-                                    <span class="username">
-                                        Maria Gonzales
-                                    <span class="text-muted float-right">8:03 PM Today</span>
-                                    </span><!-- /.username -->
-                                    It is a long established fact that a reader will be distracted
-                                    by the readable content of a page when looking at its layout.
+                                    <div class="comment-text">
+                                        <span class="username">
+                                            {{$comment->name}}
+                                        <span class="text-muted float-right">{{$comment->created_at}}</span>
+                                        </span><!-- /.username -->
+                                        {{$comment->message}}
+                                    </div>
+                                    <!-- /.comment-text -->
                                 </div>
-                                <!-- /.comment-text -->
-                            </div>
-                            <!-- /.card-comment -->
-                            <div class="card-comment">
-                                <!-- User image -->
-                                <img class="img-circle img-sm" src="../dist/img/user4-128x128.jpg" alt="User Image">
-
-                                <div class="comment-text">
-                                    <span class="username">
-                                        Luna Stark
-                                    <span class="text-muted float-right">8:03 PM Today</span>
-                                    </span><!-- /.username -->
-                                    It is a long established fact that a reader will be distracted
-                                    by the readable content of a page when looking at its layout.
-                                </div>
-                                <!-- /.comment-text -->
-                            </div>
-                            <!-- /.card-comment -->
+                            @endforeach   
                         </div>
                         <!-- /.card-footer -->
                         <div class="card-footer">

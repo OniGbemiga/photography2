@@ -28,7 +28,7 @@ class CommentController extends Controller
     public function show(Comment $comment){
 
         $comments = Comment::find($comment);
-
+        
         return view('blogs.show')->with('comments',$comments);
     }
 }
