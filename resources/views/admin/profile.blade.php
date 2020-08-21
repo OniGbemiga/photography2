@@ -1,7 +1,7 @@
 @extends('layouts.adminbody')
 
 @section('admin')
-@include('layouts.adminsidebar')
+@include('layouts.adminsidebar', ['apps' => $user])
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -33,29 +33,30 @@
               <div class="card-body box-profile">
                 <div class="text-center">
                   <img class="profile-user-img img-fluid img-circle"
-                       src="../../dist/img/user4-128x128.jpg"
+                       src="/storage/profile_image/{{$user->profile->image}}"
                        alt="User profile picture">
                 </div>
-                {{-- @foreach ($profiles as $profile)
                     
-                <h3 class="profile-username text-center">{{$profile->name}}</h3>
-                @endforeach --}}
+                <h3 class="profile-username text-center">{{$user->profile->name}}</h3>
                   
-                <p class="text-muted text-center">Software Engineer</p>
+                {{-- <p class="text-muted text-center">Software Engineer</p> --}}
 
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
-                    <b>Followers</b> <a class="float-right">1,322</a>
+                    <b>Happy Clients</b> <a class="float-right">{{$user->profile->happy}}</a>
                   </li>
                   <li class="list-group-item">
-                    <b>Following</b> <a class="float-right">543</a>
+                    <b>Studio Session</b> <a class="float-right">{{$user->profile->studio}}</a>
                   </li>
                   <li class="list-group-item">
-                    <b>Friends</b> <a class="float-right">13,287</a>
+                    <b>Photo Session</b> <a class="float-right">{{$user->profile->finished}}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Equipments</b> <a class="float-right">{{$user->profile->pound}}</a>
                   </li>
                 </ul>
 
-                <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                <a href="#update" class="btn btn-primary btn-block"><b>Update</b></a>
               </div>
               <!-- /.card-body -->
             </div>
@@ -68,35 +69,35 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <strong><i class="fas fa-book mr-1"></i> Education</strong>
+                <strong><i class="fas fa-book mr-1"></i> About</strong>
 
                 <p class="text-muted">
-                  B.S. in Computer Science from the University of Tennessee at Knoxville
+                  {{$user->profile->about}}
                 </p>
 
                 <hr>
 
-                <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
+                <strong><i class="fas fa-map-marker-alt mr-1"></i> Socials</strong>
 
-                <p class="text-muted">Malibu, California</p>
+                <p class="text-muted">{{$user->profile->twitter}}</p>
+                <p class="text-muted">{{$user->profile->facebook}}</p>
+                <p class="text-muted">{{$user->profile->instagram}}</p>
 
                 <hr>
 
                 <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
 
                 <p class="text-muted">
-                  <span class="tag tag-danger">UI Design</span>
-                  <span class="tag tag-success">Coding</span>
-                  <span class="tag tag-info">Javascript</span>
-                  <span class="tag tag-warning">PHP</span>
-                  <span class="tag tag-primary">Node.js</span>
+                  <span class="tag tag-danger">{{$user->profile->skill}}</span>
                 </p>
 
                 <hr>
 
-                <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
+                <strong><i class="far fa-file-alt mr-1"></i> Contact Address</strong>
 
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                <p class="text-muted">{{$user->profile->number}}</p>
+                <p class="text-muted">{{$user->profile->address}}</p>
+                <p class="text-muted">{{$user->profile->email}}</p>
               </div>
               <!-- /.card-body -->
             </div>
@@ -107,224 +108,13 @@
             <div class="card">
               <div class="card-header p-2">
                 <ul class="nav nav-pills">
-                  <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Activity</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Timeline</a></li>
-                  <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="#create" data-toggle="tab">Create Profile</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#update" data-toggle="tab">Update Profile</a></li>
                 </ul>
               </div><!-- /.card-header -->
               <div class="card-body">
                 <div class="tab-content">
-                  <div class="active tab-pane" id="activity">
-                    <!-- Post -->
-                    <div class="post">
-                      <div class="user-block">
-                        <img class="img-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg" alt="user image">
-                        <span class="username">
-                          <a href="#">Jonathan Burke Jr.</a>
-                          <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
-                        </span>
-                        <span class="description">Shared publicly - 7:30 PM today</span>
-                      </div>
-                      <!-- /.user-block -->
-                      <p>
-                        Lorem ipsum represents a long-held tradition for designers,
-                        typographers and the like. Some people hate it and argue for
-                        its demise, but others ignore the hate as they create awesome
-                        tools to help create filler text for everyone from bacon lovers
-                        to Charlie Sheen fans.
-                      </p>
-
-                      <p>
-                        <a href="#" class="link-black text-sm mr-2"><i class="fas fa-share mr-1"></i> Share</a>
-                        <a href="#" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i> Like</a>
-                        <span class="float-right">
-                          <a href="#" class="link-black text-sm">
-                            <i class="far fa-comments mr-1"></i> Comments (5)
-                          </a>
-                        </span>
-                      </p>
-
-                      <input class="form-control form-control-sm" type="text" placeholder="Type a comment">
-                    </div>
-                    <!-- /.post -->
-
-                    <!-- Post -->
-                    <div class="post clearfix">
-                      <div class="user-block">
-                        <img class="img-circle img-bordered-sm" src="../../dist/img/user7-128x128.jpg" alt="User Image">
-                        <span class="username">
-                          <a href="#">Sarah Ross</a>
-                          <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
-                        </span>
-                        <span class="description">Sent you a message - 3 days ago</span>
-                      </div>
-                      <!-- /.user-block -->
-                      <p>
-                        Lorem ipsum represents a long-held tradition for designers,
-                        typographers and the like. Some people hate it and argue for
-                        its demise, but others ignore the hate as they create awesome
-                        tools to help create filler text for everyone from bacon lovers
-                        to Charlie Sheen fans.
-                      </p>
-
-                      <form class="form-horizontal">
-                        <div class="input-group input-group-sm mb-0">
-                          <input class="form-control form-control-sm" placeholder="Response">
-                          <div class="input-group-append">
-                            <button type="submit" class="btn btn-danger">Send</button>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                    <!-- /.post -->
-
-                    <!-- Post -->
-                    <div class="post">
-                      <div class="user-block">
-                        <img class="img-circle img-bordered-sm" src="../../dist/img/user6-128x128.jpg" alt="User Image">
-                        <span class="username">
-                          <a href="#">Adam Jones</a>
-                          <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
-                        </span>
-                        <span class="description">Posted 5 photos - 5 days ago</span>
-                      </div>
-                      <!-- /.user-block -->
-                      <div class="row mb-3">
-                        <div class="col-sm-6">
-                          <img class="img-fluid" src="../../dist/img/photo1.png" alt="Photo">
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-sm-6">
-                          <div class="row">
-                            <div class="col-sm-6">
-                              <img class="img-fluid mb-3" src="../../dist/img/photo2.png" alt="Photo">
-                              <img class="img-fluid" src="../../dist/img/photo3.jpg" alt="Photo">
-                            </div>
-                            <!-- /.col -->
-                            <div class="col-sm-6">
-                              <img class="img-fluid mb-3" src="../../dist/img/photo4.jpg" alt="Photo">
-                              <img class="img-fluid" src="../../dist/img/photo1.png" alt="Photo">
-                            </div>
-                            <!-- /.col -->
-                          </div>
-                          <!-- /.row -->
-                        </div>
-                        <!-- /.col -->
-                      </div>
-                      <!-- /.row -->
-
-                      <p>
-                        <a href="#" class="link-black text-sm mr-2"><i class="fas fa-share mr-1"></i> Share</a>
-                        <a href="#" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i> Like</a>
-                        <span class="float-right">
-                          <a href="#" class="link-black text-sm">
-                            <i class="far fa-comments mr-1"></i> Comments (5)
-                          </a>
-                        </span>
-                      </p>
-
-                      <input class="form-control form-control-sm" type="text" placeholder="Type a comment">
-                    </div>
-                    <!-- /.post -->
-                  </div>
-                  <!-- /.tab-pane -->
-                  <div class="tab-pane" id="timeline">
-                    <!-- The timeline -->
-                    <div class="timeline timeline-inverse">
-                      <!-- timeline time label -->
-                      <div class="time-label">
-                        <span class="bg-danger">
-                          10 Feb. 2014
-                        </span>
-                      </div>
-                      <!-- /.timeline-label -->
-                      <!-- timeline item -->
-                      <div>
-                        <i class="fas fa-envelope bg-primary"></i>
-
-                        <div class="timeline-item">
-                          <span class="time"><i class="far fa-clock"></i> 12:05</span>
-
-                          <h3 class="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
-
-                          <div class="timeline-body">
-                            Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
-                            weebly ning heekya handango imeem plugg dopplr jibjab, movity
-                            jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
-                            quora plaxo ideeli hulu weebly balihoo...
-                          </div>
-                          <div class="timeline-footer">
-                            <a href="#" class="btn btn-primary btn-sm">Read more</a>
-                            <a href="#" class="btn btn-danger btn-sm">Delete</a>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- END timeline item -->
-                      <!-- timeline item -->
-                      <div>
-                        <i class="fas fa-user bg-info"></i>
-
-                        <div class="timeline-item">
-                          <span class="time"><i class="far fa-clock"></i> 5 mins ago</span>
-
-                          <h3 class="timeline-header border-0"><a href="#">Sarah Young</a> accepted your friend request
-                          </h3>
-                        </div>
-                      </div>
-                      <!-- END timeline item -->
-                      <!-- timeline item -->
-                      <div>
-                        <i class="fas fa-comments bg-warning"></i>
-
-                        <div class="timeline-item">
-                          <span class="time"><i class="far fa-clock"></i> 27 mins ago</span>
-
-                          <h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
-
-                          <div class="timeline-body">
-                            Take me to your leader!
-                            Switzerland is small and neutral!
-                            We are more like Germany, ambitious and misunderstood!
-                          </div>
-                          <div class="timeline-footer">
-                            <a href="#" class="btn btn-warning btn-flat btn-sm">View comment</a>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- END timeline item -->
-                      <!-- timeline time label -->
-                      <div class="time-label">
-                        <span class="bg-success">
-                          3 Jan. 2014
-                        </span>
-                      </div>
-                      <!-- /.timeline-label -->
-                      <!-- timeline item -->
-                      <div>
-                        <i class="fas fa-camera bg-purple"></i>
-
-                        <div class="timeline-item">
-                          <span class="time"><i class="far fa-clock"></i> 2 days ago</span>
-
-                          <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
-
-                          <div class="timeline-body">
-                            <img src="https://placehold.it/150x100" alt="...">
-                            <img src="https://placehold.it/150x100" alt="...">
-                            <img src="https://placehold.it/150x100" alt="...">
-                            <img src="https://placehold.it/150x100" alt="...">
-                          </div>
-                        </div>
-                      </div>
-                      <!-- END timeline item -->
-                      <div>
-                        <i class="far fa-clock bg-gray"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- /.tab-pane -->
-
-                  <div class="tab-pane" id="settings">
+                  <div class="tab-pane" id="create">
                     <form class="form-horizontal" action="{{route('adminProfileStore')}}" method="POST" enctype="multipart/form-data">
                       @csrf
                       <div class="form-group row">
@@ -453,6 +243,137 @@
                     </form>
                   </div>
                   <!-- /.tab-pane -->
+
+                  <div class="tab-pane" id="update">
+                    <form class="form-horizontal" action="{{route('adminProfileUpdate', ['profiles' => $user->profile->id])}}" method="POST" enctype="multipart/form-data">
+                      @csrf
+                      @method('PATCH')
+                      <div class="form-group row">
+                        <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputName" name="name" value="{{$user->profile->name}}">
+                        </div>
+                        @error('name')
+                          <small class="text-danger">{{$message}}</small>
+                        @enderror
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputEmail" class="col-sm-2 col-form-label">Mailing Address</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputEmail" name="email" value="{{$user->profile->email}}">
+                        </div>
+                        @error('email')
+                          <small class="text-danger">{{$message}}</small>
+                        @enderror
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputTwitter" class="col-sm-2 col-form-label">Twitter</label>
+                        <div class="col-sm-10">
+                          <input type="url" class="form-control" id="inputTwitter" name="twitter" value="{{$user->profile->twitter}}">
+                        </div>
+                        @error('twitter')
+                          <small class="text-danger">{{$message}}</small>
+                        @enderror
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputFacebook" class="col-sm-2 col-form-label">Facebook</label>
+                        <div class="col-sm-10">
+                          <input type="url" class="form-control" id="inputFacebook" name="facebook" value="{{$user->profile->facebook}}">
+                        </div>
+                        @error('facebook')
+                          <small class="text-danger">{{$message}}</small>
+                        @enderror
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputInstagram" class="col-sm-2 col-form-label">Instagram</label>
+                        <div class="col-sm-10">
+                          <input type="url" class="form-control" id="inputInstagram" name="instagram" value="{{$user->profile->instagram}}">
+                        </div>
+                        @error('instagram')
+                          <small class="text-danger">{{$message}}</small>
+                        @enderror
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputNumber" class="col-sm-2 col-form-label">Phone Number</label>
+                        <div class="col-sm-10">
+                          <input type="number" class="form-control" id="inputNumber" name="number" value="{{$user->profile->number}}">
+                        </div>
+                        @error('number')
+                          <small class="text-danger">{{$message}}</small>
+                        @enderror
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputContact" class="col-sm-2 col-form-label">Office Address</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputContact" name="address" value="{{$user->profile->address}}">
+                        </div>
+                        @error('address')
+                          <small class="text-danger">{{$message}}</small>
+                        @enderror
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputName2" class="col-sm-2 col-form-label">Image</label>
+                        <div class="col-sm-10">
+                          <input type="file" class="form-control" id="inputName2" name="image" value="{{$user->profile->image}}">
+                        </div>
+                        @error('image')
+                          <small class="text-danger">{{$message}}</small>
+                        @enderror
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputExperience" class="col-sm-2 col-form-label">About Me</label>
+                        <div class="col-sm-10">
+                          <textarea class="form-control" id="inputExperience" name="about" placeholder="About Me">{{$user->profile->about}}</textarea>
+                        </div>
+                        @error('about')
+                          <small class="text-danger">{{$message}}</small>
+                        @enderror
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputSkills" class="col-sm-2 col-form-label">Skills</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputSkills" name="skill" value="{{$user->profile->skill}}">
+                        </div>
+                        @error('skill')
+                          <small class="text-danger">{{$message}}</small>
+                        @enderror
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputSkills" class="col-sm-2 col-form-label">Appraisal</label>
+                        <div class="col-sm-2">
+                          <input type="number" class="form-control" id="inputSkills" name="pound" value="{{$user->profile->pound}}">
+                          @error('pound')
+                            <small class="text-danger">{{$message}}</small>
+                          @enderror
+                        </div>
+                        <div class="col-sm-2">
+                          <input type="number" class="form-control" id="inputSkills" name="studio" value="{{$user->profile->studio}}">
+                          @error('studio')
+                            <small class="text-danger">{{$message}}</small>
+                          @enderror
+                        </div>
+                        <div class="col-sm-2">
+                          <input type="number" class="form-control" id="inputSkills" name="finished" value="{{$user->profile->finished}}">
+                          @error('finished')
+                            <small class="text-danger">{{$message}}</small>
+                          @enderror
+                        </div>
+                        <div class="col-sm-2">
+                          <input type="number" class="form-control" id="inputSkills" name="happy" value="{{$user->profile->happy}}">
+                          @error('happy')
+                            <small class="text-danger">{{$message}}</small>
+                          @enderror
+                        </div>
+                      </div>
+                      <input type="hidden" name="user_id" value="{{Auth::User()->id}}">
+                      <div class="form-group row">
+                        <div class="offset-sm-2 col-sm-10">
+                          <button type="submit" class="btn btn-danger">Update Profile</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+
                 </div>
                 <!-- /.tab-content -->
               </div><!-- /.card-body -->

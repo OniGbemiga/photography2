@@ -70,13 +70,13 @@
     <a href="/admin"><b>Admin</b>LTE</a>
   </div>
   <!-- User name -->
-  <div class="lockscreen-name">{{$users->name}}</div>
+  <div class="lockscreen-name">{{$users->profile->name}}</div>
 
   <!-- START LOCK SCREEN ITEM -->
   <div class="lockscreen-item">
     <!-- lockscreen image -->
     <div class="lockscreen-image">
-      <img src="../../dist/img/user1-128x128.jpg" alt="User Image">
+      <img src="/storage/profile_image/{{$users->profile->image}}" alt="User Image">
     </div>
     <!-- /.lockscreen-image -->
 

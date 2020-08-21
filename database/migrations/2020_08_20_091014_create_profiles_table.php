@@ -16,6 +16,7 @@ class CreateProfilesTable extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('name');
             $table->string('email');
             $table->string('twitter');

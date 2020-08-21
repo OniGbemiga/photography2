@@ -136,11 +136,14 @@
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+        {{-- <div class="image">
+          <img src="/storage/profile_image/{{$user->profile->image}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="/admin/profile" class="d-block">Alexander Pierce</a>
+          <a href="/admin/profile" class="d-block">{{$user->profile->name}}</a>
+        </div> --}}
+        <div class="info">
+          <a href="/admin/profile" class="d-block">Go To Profile</a>
         </div>
       </div>
 

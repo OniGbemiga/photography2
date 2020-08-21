@@ -6,9 +6,15 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Profile;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class AdminProfileController extends Controller
 {
+    public function __construct()
+     {
+         $this->middleware('auth');
+     }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,9 +22,11 @@ class AdminProfileController extends Controller
      */
     public function index()
     {
-        $profiles = Profile::first();
+        //$profiles = Profile::get();
         //dd($profiles);
-        return view('admin.profile')->with('profiles',$profiles);
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        return view('admin.profile')->with('user',$user);
     }
 
     /**
@@ -39,9 +47,62 @@ class AdminProfileController extends Controller
      */
     public function store(Request $request)
     {
-        $profile = Profile::create($this->validateRequest());
-        $this->storeImage($profile);
+        $this->validate($request,[
+            'user_id' => 'required',
+            'name' => 'required',
+            'email' => 'required|e-mail',
+            'twitter' => 'required|url',
+            'facebook' => 'required|url',
+            'instagram' => 'required|url',
+            'number' => 'required',
+            'address' => 'required',
+            'image' => 'required|File|image',
+            'about' => 'required',
+            'skill' => 'required',
+            'pound' => 'required',
+            'studio' => 'required',
+            'finished' => 'required',
+            'happy' => 'required',
+        ]);
 
+        if($request->hasFile('image')){
+            //get filename with extension
+            $filenameWithExt = $request->file('image')->getClientOriginalName();
+            //get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            //get just ext
+            $extension = $request->file('image')->getClientOriginalExtension();
+            //filename to store
+            $fileNameToStore = $filename .'_'.time().'.'.$extension;
+            //upload image
+            $path = $request->file('image')->storeAs('public/profile_image', $fileNameToStore);
+            //$image = Image::make(public_path("storage/{$fileNameToStore}"))->fit(20,20);
+         }
+          else {
+              $fileNameToStore = 'noimage.jpg';
+              //return redirect('/posts')->with('error', 'Image not Created');
+          }
+
+        $profile = new Profile();
+        $profile->name = $request->input('name');
+        $profile->email = $request->input('email');
+        $profile->twitter = $request->input('twitter');
+        $profile->facebook = $request->input('facebook');
+        $profile->instagram = $request->input('instagram');
+        $profile->number = $request->input('number');
+        $profile->address = $request->input('address');
+        $profile->about = $request->input('about');
+        $profile->skill = $request->input('skill');
+        $profile->pound = $request->input('pound');
+        $profile->studio = $request->input('studio');
+        $profile->finished = $request->input('finished');
+        $profile->happy = $request->input('happy');
+        //$this->storeImage($profile);
+        $profile->image = $fileNameToStore;
+
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        $user->profile()->save($profile);
         return back();
     }
 
@@ -76,7 +137,65 @@ class AdminProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'user_id' => 'required',
+            'name' => 'required',
+            'email' => 'required|e-mail',
+            'twitter' => 'required|url',
+            'facebook' => 'required|url',
+            'instagram' => 'required|url',
+            'number' => 'required',
+            'address' => 'required',
+            'image' => 'File|image',
+            'about' => 'required',
+            'skill' => 'required',
+            'pound' => 'required',
+            'studio' => 'required',
+            'finished' => 'required',
+            'happy' => 'required',
+        ]);
+
+        if($request->hasFile('image')){
+            //get filename with extension
+            $filenameWithExt = $request->file('image')->getClientOriginalName();
+            //get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            //get just ext
+            $extension = $request->file('image')->getClientOriginalExtension();
+            //filename to store
+            $fileNameToStore = $filename .'_'.time().'.'.$extension;
+            //upload image
+            $path = $request->file('image')->storeAs('public/profile_image', $fileNameToStore);
+            //$image = Image::make(public_path("storage/{$fileNameToStore}"))->fit(20,20);
+         }
+          else {
+              $fileNameToStore = 'noimage.jpg';
+              //return redirect('/posts')->with('error', 'Image not Created');
+          }
+        
+        $profile = Profile::find($id);
+        //dd($profile);
+        $profile->name = $request->input('name');
+        $profile->email = $request->input('email');
+        $profile->twitter = $request->input('twitter');
+        $profile->facebook = $request->input('facebook');
+        $profile->instagram = $request->input('instagram');
+        $profile->number = $request->input('number');
+        $profile->address = $request->input('address');
+        $profile->about = $request->input('about');
+        $profile->skill = $request->input('skill');
+        $profile->pound = $request->input('pound');
+        $profile->studio = $request->input('studio');
+        $profile->finished = $request->input('finished');
+        $profile->happy = $request->input('happy');
+        if ($request->hasFile('image')) {
+            $profile->image = $fileNameToStore;
+        }
+
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        $user->profile()->save($profile);
+        return back();
     }
 
     /**
@@ -88,36 +207,5 @@ class AdminProfileController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    private function validateRequest(){
-        return request()->validate([
-            'user_id' => 'required',
-            'name' => 'required',
-            'email' => 'required|e-mail',
-            'twitter' => 'required|url',
-            'facebook' => 'required|url',
-            'instagram' => 'required|url',
-            'number' => 'required',
-            'address' => 'required',
-            'image' => 'required|File|image',
-            'about' => 'required',
-            'skill' => 'required',
-            'pound' => 'required',
-            'studio' => 'required',
-            'finished' => 'required',
-            'happy' => 'required',
-        ]);
-    }
-
-    private function storeImage($profile){
-        if (request()->hasFile('image')){
-            $profile->update([
-                'image' => request()->image->store('profile_image' , 'public'),
-            ]);
-            $image = \Intervention\Image\Facades\Image::make(public_path('storage/' . $profile->image));
-                //->fit(800,500);
-            $image->save();
-        }
     }
 }

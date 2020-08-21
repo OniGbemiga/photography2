@@ -67,6 +67,7 @@ Route::delete('/mails/{contact}', 'AdminMailController@adminMailDelete')->name('
 //AdminProfile
 Route::get('/admin/profile', 'AdminProfileController@index');
 Route::post('/admin/profiles', 'AdminProfileController@store')->name('adminProfileStore');
+Route::patch('/admin/{profiles}', 'AdminProfileController@update')->name('adminProfileUpdate');
 
 //Pages
 Route::get('/', 'PagesController@index')->name('index');
