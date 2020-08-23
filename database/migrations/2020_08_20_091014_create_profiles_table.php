@@ -31,7 +31,7 @@ class CreateProfilesTable extends Migration
             $table->integer('finished');
             $table->integer('happy');
             $table->timestamps();
-            $table->integer('user_id')->unsigned();
+            //$table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
