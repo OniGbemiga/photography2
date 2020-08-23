@@ -10,9 +10,9 @@
                 <div class="d-flex align-items-center js-fullheight">
                     <div class="author-image text img d-flex">
                         <section class="home-slider js-fullheight owl-carousel">
-                            <div class="slider-item js-fullheight" style="background-image: url({{asset('images/author.jpg')}});">
+                            <div class="slider-item js-fullheight" style="background-image: url({{secure_asset('images/author.jpg')}});">
                             </div>
-                            <div class="slider-item js-fullheight" style="background-image:url({{asset('images/author-2.jpg')}});">
+                            <div class="slider-item js-fullheight" style="background-image:url({{secure_asset('images/author-2.jpg')}});">
                             </div>
                         </section>
                     </div>
@@ -42,35 +42,35 @@
                 </div>
                 <div class="row no-gutters">
                     <div class="col-sm-12 col-md ftco-animate">
-                        <a href="{{asset('images/image_1.jpg')}}" class="insta-img image-popup" style="background-image: url({{asset('images/image_1.jpg')}});">
+                        <a href="{{secure_asset('images/image_1.jpg')}}" class="insta-img image-popup" style="background-image: url({{secure_asset('images/image_1.jpg')}});">
                             <div class="icon d-flex justify-content-center">
                                 <span class="icon-instagram align-self-center"></span>
                             </div>
                         </a>
                     </div>
                     <div class="col-sm-12 col-md ftco-animate">
-                        <a href="{{asset('images/image_2.jpg')}}" class="insta-img image-popup" style="background-image: url({{asset('images/image_2.jpg')}});">
+                        <a href="{{secure_asset('images/image_2.jpg')}}" class="insta-img image-popup" style="background-image: url({{secure_asset('images/image_2.jpg')}});">
                             <div class="icon d-flex justify-content-center">
                                 <span class="icon-instagram align-self-center"></span>
                             </div>
                         </a>
                     </div>
                     <div class="col-sm-12 col-md ftco-animate">
-                        <a href="{{asset('images/image_3.jpg')}}" class="insta-img image-popup" style="background-image: url({{asset('images/image_3.jpg')}});">
+                        <a href="{{secure_asset('images/image_3.jpg')}}" class="insta-img image-popup" style="background-image: url({{secure_asset('images/image_3.jpg')}});">
                             <div class="icon d-flex justify-content-center">
                                 <span class="icon-instagram align-self-center"></span>
                             </div>
                         </a>
                     </div>
                     <div class="col-sm-12 col-md ftco-animate">
-                        <a href="{{asset('images/image_4.jpg')}}" class="insta-img image-popup" style="background-image: url({{asset('images/image_4.jpg')}});">
+                        <a href="{{secure_asset('images/image_4.jpg')}}" class="insta-img image-popup" style="background-image: url({{secure_asset('images/image_4.jpg')}});">
                             <div class="icon d-flex justify-content-center">
                                 <span class="icon-instagram align-self-center"></span>
                             </div>
                         </a>
                     </div>
                     <div class="col-sm-12 col-md ftco-animate">
-                        <a href="{{asset('images/image_5.jpg')}}" class="insta-img image-popup" style="background-image: url({{asset('images/image_5.jpg')}});">
+                        <a href="{{secure_asset('images/image_5.jpg')}}" class="insta-img image-popup" style="background-image: url({{secure_asset('images/image_5.jpg')}});">
                             <div class="icon d-flex justify-content-center">
                                 <span class="icon-instagram align-self-center"></span>
                             </div>

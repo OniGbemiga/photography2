@@ -14,7 +14,7 @@ class AddTermsToUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('terms');
+            $table->string('terms')->nullable();
         });
     }
 

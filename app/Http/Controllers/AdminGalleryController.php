@@ -11,10 +11,10 @@ use Illuminate\Support\Facades\File;
 
 class AdminGalleryController extends Controller
 {
-    public function __construct()
-     {
-         $this->middleware('auth');
-     }
+    // public function __construct()
+    //  {
+    //      $this->middleware('auth');
+    //  }
 
     public function adminGallery(){
 
@@ -44,6 +44,7 @@ class AdminGalleryController extends Controller
             Gallery::create([
                 'original' => '/gallery/' . $original,
                 'thumbnail' => '/gallery/' . $thumbnail,
+                'tag' => ''
             ]);
         });
 

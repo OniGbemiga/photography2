@@ -20,8 +20,8 @@
                     <div class="col-lg-8 ftco-animate">
                         <h2 class="mb-3 font-weight-bold">{{$blogs->title}}</h2>
                         <p>
-                            <a href="{{asset('storage/'.$blogs->blog_image)}}" class=" img image-popup d-flex justify-content-start align-items-end" style="background-image: url('storage/'.{{$blogs->blog_image}});">
-                                <img src="{{asset('storage/'.$blogs->blog_image)}}" alt="" class="img-fluid">
+                            <a href="{{secure_asset('storage/'.$blogs->blog_image)}}" class=" img image-popup d-flex justify-content-start align-items-end" style="background-image: url('storage/'.{{$blogs->blog_image}});">
+                                <img src="{{secure_asset('storage/'.$blogs->blog_image)}}" alt="" class="img-fluid">
                             </a>
                         </p>
                         <p> {!!$blogs->message!!} </p>
@@ -35,7 +35,7 @@
                         </div>
                         <div class="about-author d-flex p-4 bg-light">
                             <div class="bio mr-5">
-                                <img src="{{asset('images/person_1.jpg')}}" alt="Image placeholder" class="img-fluid mb-4">
+                                <img src="{{secure_asset('images/person_1.jpg')}}" alt="Image placeholder" class="img-fluid mb-4">
                             </div>
                             <div class="desc">
                                 <h3>George Washington</h3>
@@ -48,7 +48,7 @@
                                 @foreach ($blogs->comments as $comment)    
                                     <li class="comment">
                                         <div class="vcard bio">
-                                            <img src="{{asset('images/person_1.jpg')}}" alt="Image placeholder">
+                                            <img src="{{secure_asset('images/person_1.jpg')}}" alt="Image placeholder">
                                         </div>
                                         <div class="comment-body">
                                             <h3>{{$comment->name}}</h3>
@@ -139,7 +139,7 @@
                         <div class="sidebar-box ftco-animate">
                             <h3 class="sidebar-heading">Popular Articles</h3>
                             <div class="block-21 mb-4 d-flex">
-                                <a class="blog-img mr-4" style="background-image: url({{asset('images/image_1.jpg')}});"></a>
+                                <a class="blog-img mr-4" style="background-image: url({{secure_asset('images/image_1.jpg')}});"></a>
                                 <div class="text">
                                     <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control</a></h3>
                                     <div class="meta">
@@ -150,7 +150,7 @@
                                 </div>
                             </div>
                             <div class="block-21 mb-4 d-flex">
-                                <a class="blog-img mr-4" style="background-image: url({{asset('images/image_2.jpg')}});"></a>
+                                <a class="blog-img mr-4" style="background-image: url({{secure_asset('images/image_2.jpg')}});"></a>
                                 <div class="text">
                                     <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control</a></h3>
                                     <div class="meta">
@@ -161,7 +161,7 @@
                                 </div>
                             </div>
                             <div class="block-21 mb-4 d-flex">
-                                <a class="blog-img mr-4" style="background-image: url({{asset('images/image_3.jpg')}});"></a>
+                                <a class="blog-img mr-4" style="background-image: url({{secure_asset('images/image_3.jpg')}});"></a>
                                 <div class="text">
                                     <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control</a></h3>
                                     <div class="meta">
@@ -185,7 +185,7 @@
                                 <a href="#" class="tag-cloud-link">food</a>
                             </ul>
                         </div>
-                        <div class="sidebar-box subs-wrap img" style="background-image: url({{asset('images/bg_1.jpg')}});">
+                        <div class="sidebar-box subs-wrap img" style="background-image: url({{secure_asset('images/bg_1.jpg')}});">
                             <div class="overlay"></div>
                             <h3 class="mb-4 sidebar-heading">Newsletter</h3>
                             <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia</p>
