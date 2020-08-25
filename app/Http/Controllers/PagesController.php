@@ -2,17 +2,23 @@
 
 namespace App\Http\Controllers;
 use App\Gallery;
+use App\User;
+use App\Profile;
 
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
     public function index(){
-        return view('pages.index');
+        $profiles = Profile::all();
+        return view('pages.index')->with('profiles',$profiles);
     }
 
     public function about(){
-        return view('pages.about');
+
+        $profiles = Profile::all();
+        //dd($profiles);
+        return view('pages.about')->with('profiles',$profiles);
     }
 
     public function blog(){

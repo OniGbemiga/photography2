@@ -11,24 +11,24 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Herr+Von+Muellerhoff" rel="stylesheet">
 {{--    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">--}}
-    <link rel="stylesheet" href="{{secure_asset('css/open-iconic-bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{secure_asset('css/animate.css')}}">
-    <link rel="stylesheet" href="{{secure_asset('css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{secure_asset('css/owl.theme.default.min.css')}}">
-    <link rel="stylesheet" href="{{secure_asset('css/magnific-popup.css')}}">
-    <link rel="stylesheet" href="{{secure_asset('css/aos.css')}}">
-    <link rel="stylesheet" href="{{secure_asset('css/ionicons.min.css')}}">
-    <link rel="stylesheet" href="{{secure_asset('css/bootstrap-datepicker.css')}}">
-    <link rel="stylesheet" href="{{secure_asset('css/jquery.timepicker.css')}}">
-    <link rel="stylesheet" href="{{secure_asset('css/flaticon.css')}}">
-    <link rel="stylesheet" href="{{secure_asset('css/icomoon.css')}}">
-    <link rel="stylesheet" href="{{secure_asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/open-iconic-bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{asset('css/aos.css')}}">
+    <link rel="stylesheet" href="{{asset('css/ionicons.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker.css')}}">
+    <link rel="stylesheet" href="{{asset('css/jquery.timepicker.css')}}">
+    <link rel="stylesheet" href="{{asset('css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{asset('css/icomoon.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
 <body>
 <div id="colorlib-page">
     <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
     <aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
-        <h1 id="colorlib-logo"><a href="{{route('index')}}"><span class="img" style="background-image: url({{secure_asset('images/author.jpg')}});"></span>Louie Smith</a></h1>
+        <h1 id="colorlib-logo"><a href="{{route('index')}}"><span class="img" style="background-image: url({{asset('images/author.jpg')}});"></span>Louie Smith</a></h1>
         <nav id="colorlib-main-menu" role="navigation">
             <ul>
                 <li  class="colorlib-active"><a href="{{route('index')}}">Home</a></li>
@@ -66,12 +66,12 @@
                     <div class="ftco-footer-widget mb-4 ml-md-4">
                         <h2 class="ftco-heading-2">Recent Photos</h2>
                         <ul class="list-unstyled photo">
-                            <li><a href="#" class="img" style="background-image: url({{secure_asset('images/image_1.jpg')}});"></a></li>
-                            <li><a href="#" class="img" style="background-image: url({{secure_asset('images/image_2.jpg')}});"></a></li>
-                            <li><a href="#" class="img" style="background-image: url({{secure_asset('images/image_3.jpg')}});"></a></li>
-                            <li><a href="#" class="img" style="background-image: url({{secure_asset('images/image_4.jpg')}});"></a></li>
-                            <li><a href="#" class="img" style="background-image: url({{secure_asset('images/image_5.jpg')}});"></a></li>
-                            <li><a href="#" class="img" style="background-image: url({{secure_asset('images/image_6.jpg')}});"></a></li>
+                            <li><a href="#" class="img" style="background-image: url({{asset('images/image_1.jpg')}});"></a></li>
+                            <li><a href="#" class="img" style="background-image: url({{asset('images/image_2.jpg')}});"></a></li>
+                            <li><a href="#" class="img" style="background-image: url({{asset('images/image_3.jpg')}});"></a></li>
+                            <li><a href="#" class="img" style="background-image: url({{asset('images/image_4.jpg')}});"></a></li>
+                            <li><a href="#" class="img" style="background-image: url({{asset('images/image_5.jpg')}});"></a></li>
+                            <li><a href="#" class="img" style="background-image: url({{asset('images/image_6.jpg')}});"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -103,7 +103,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <p>
-                        Copyright &copy;<script data-cfasync="false" src="{{secure_asset('cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')}}"></script><script type="d4b2fcfa3cd0ec3d48f153b9-text/javascript">document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank">Colorlib</a>
+                        Copyright &copy;<script data-cfasync="false" src="{{asset('cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')}}"></script><script type="d4b2fcfa3cd0ec3d48f153b9-text/javascript">document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank">Colorlib</a>
                     </p>
                 </div>
             </div>
@@ -113,23 +113,23 @@
 </div>
 
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
-<script src="{{secure_asset('js/jquery.min.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
-<script src="{{secure_asset('js/jquery-migrate-3.0.1.min.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
-<script src="{{secure_asset('js/popper.min.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
-<script src="{{secure_asset('js/bootstrap.min.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
-<script src="{{secure_asset('js/jquery.easing.1.3.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
-<script src="{{secure_asset('js/jquery.waypoints.min.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
-<script src="{{secure_asset('js/jquery.stellar.min.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
-<script src="{{secure_asset('js/owl.carousel.min.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
-<script src="{{secure_asset('js/jquery.magnific-popup.min.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
-<script src="{{secure_asset('js/aos.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
-<script src="{{secure_asset('js/jquery.animateNumber.min.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
-<script src="{{secure_asset('js/bootstrap-datepicker.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
-<script src="{{secure_asset('js/jquery.timepicker.min.html')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
-<script src="{{secure_asset('js/scrollax.min.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
+<script src="{{asset('js/jquery.min.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
+<script src="{{asset('js/jquery-migrate-3.0.1.min.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
+<script src="{{asset('js/popper.min.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
+<script src="{{asset('js/bootstrap.min.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
+<script src="{{asset('js/jquery.easing.1.3.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
+<script src="{{asset('js/jquery.waypoints.min.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
+<script src="{{asset('js/jquery.stellar.min.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
+<script src="{{asset('js/owl.carousel.min.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
+<script src="{{asset('js/jquery.magnific-popup.min.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
+<script src="{{asset('js/aos.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
+<script src="{{asset('js/jquery.animateNumber.min.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
+<script src="{{asset('js/bootstrap-datepicker.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
+<script src="{{asset('js/jquery.timepicker.min.html')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
+<script src="{{asset('js/scrollax.min.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&amp;sensor=false" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
-<script src="{{secure_asset('js/google-map.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
-<script src="{{secure_asset('js/main.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
+<script src="{{asset('js/google-map.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
+<script src="{{asset('js/main.js')}}" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="d4b2fcfa3cd0ec3d48f153b9-text/javascript"></script>
 <script type="d4b2fcfa3cd0ec3d48f153b9-text/javascript">
@@ -139,7 +139,7 @@
 
   gtag('config', 'UA-23581568-13');
 </script>
-<script src="{{secure_asset('ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js')}}" data-cf-settings="d4b2fcfa3cd0ec3d48f153b9-|49" defer=""></script></body>
+<script src="{{asset('ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js')}}" data-cf-settings="d4b2fcfa3cd0ec3d48f153b9-|49" defer=""></script></body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">

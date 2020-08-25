@@ -21,10 +21,10 @@ class CreateProfilesTable extends Migration
             $table->string('twitter');
             $table->string('facebook');
             $table->string('instagram');
-            $table->integer('number');
+            $table->bigInteger('number');
             $table->string('address');
             $table->string('image');
-            $table->string('about');
+            $table->longText('about');
             $table->string('skill');
             $table->integer('pound');
             $table->integer('studio');

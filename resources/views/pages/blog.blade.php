@@ -24,7 +24,7 @@
 
                                 <div class="col-md-12">
                                     <div class="blog-entry ftco-animate d-md-flex">
-                                        <a href="blogs/{{$blog->id}}" class="img img-2" style="background-image: url({{secure_asset('storage/'.$blog->blog_image)}});"></a>
+                                        <a href="blogs/{{$blog->id}}" class="img img-2" style="background-image: url({{asset('storage/'.$blog->blog_image)}});"></a>
                                         <div class="text text-2 p-4">
                                             <h3 class="mb-2"><a href="blogs/{{$blog->id}}">{{$blog->title}}</a></h3>
                                             <div class="meta-wrap">
@@ -70,7 +70,7 @@
                         <div class="sidebar-box ftco-animate">
                             <h3 class="sidebar-heading">Popular Articles</h3>
                             <div class="block-21 mb-4 d-flex">
-                                <a class="blog-img mr-4" style="background-image: url({{secure_asset('images/image_1.jpg')}});"></a>
+                                <a class="blog-img mr-4" style="background-image: url({{asset('images/image_1.jpg')}});"></a>
                                 <div class="text">
                                     <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control</a></h3>
                                     <div class="meta">
@@ -81,7 +81,7 @@
                                 </div>
                             </div>
                             <div class="block-21 mb-4 d-flex">
-                                <a class="blog-img mr-4" style="background-image: url({{secure_asset('images/image_2.jpg')}});"></a>
+                                <a class="blog-img mr-4" style="background-image: url({{asset('images/image_2.jpg')}});"></a>
                                 <div class="text">
                                     <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control</a></h3>
                                     <div class="meta">
@@ -92,7 +92,7 @@
                                 </div>
                             </div>
                             <div class="block-21 mb-4 d-flex">
-                                <a class="blog-img mr-4" style="background-image: url({{secure_asset('images/image_3.jpg')}});"></a>
+                                <a class="blog-img mr-4" style="background-image: url({{asset('images/image_3.jpg')}});"></a>
                                 <div class="text">
                                     <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control</a></h3>
                                     <div class="meta">
@@ -116,7 +116,7 @@
                                 <a href="#" class="tag-cloud-link">food</a>
                             </ul>
                         </div>
-                        <div class="sidebar-box subs-wrap img" style="background-image: url({{secure_asset('images/bg_1.jpg')}});">
+                        <div class="sidebar-box subs-wrap img" style="background-image: url({{asset('images/bg_1.jpg')}});">
                             <div class="overlay"></div>
                             <h3 class="mb-4 sidebar-heading">Newsletter</h3>
                             <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia</p>

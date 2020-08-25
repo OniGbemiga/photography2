@@ -2,7 +2,8 @@
 
 @section('content')
 
-
+@foreach ($profiles as $profile)
+    
     <div id="colorlib-main">
         <section class="ftco-section-no-padding bg-light">
             <div class="hero-wrap">
@@ -13,14 +14,14 @@
                     <div class="author-info text p-4 p-md-5 mt-5 mb-5">
                         <div class="desc">
                             <span class="subheading">Nice To Meet You</span>
-                            <h1 class="big-letter">Louie Smith</h1>
-                            <h1 class="mb-4"><span>My Name is Louie Smith</span></h1>
-                            <p class="mb-4">I am A Photographer from America Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                            <h3 class="signature h1">Louie Smith</h3>
+                            <h1 class="big-letter">{{$profile->name}}</h1>
+                            <h1 class="mb-4"><span>My Name is {{$profile->name}}</span></h1>
+                            <p class="mb-4">{{$profile->about}}</p>
+                            <h3 class="signature h1">{{$profile->name}}</h3>
                             <ul class="ftco-social mt-3">
-                                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                                <li class="ftco-animate"><a href="{{$profile->twitter}}" target="_blank"><span class="icon-twitter"></span></a></li>
+                                <li class="ftco-animate"><a href="{{$profile->facebook}}" target="_blank"><span class="icon-facebook"></span></a></li>
+                                <li class="ftco-animate"><a href="{{$profile->instagram}}" target="_blank"><span class="icon-instagram"></span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -35,7 +36,7 @@
                             <div class="col-xl-3 col-md-6 d-flex justify-content-center counter-wrap ftco-animate">
                                 <div class="block-18">
                                     <div class="text d-flex align-items-center">
-                                        <strong class="number" data-number="120">0</strong>
+                                        <strong class="number" data-number="{{$profile->pound}}">0</strong>
                                         <span>Pounds of Equipment</span>
                                     </div>
                                 </div>
@@ -43,7 +44,7 @@
                             <div class="col-xl-3 col-md-6 d-flex justify-content-center counter-wrap ftco-animate">
                                 <div class="block-18">
                                     <div class="text d-flex align-items-center">
-                                        <strong class="number" data-number="150">0</strong>
+                                        <strong class="number" data-number="{{$profile->studio}}">0</strong>
                                         <span>Studio Session</span>
                                     </div>
                                 </div>
@@ -51,7 +52,7 @@
                             <div class="col-xl-3 col-md-6 d-flex justify-content-center counter-wrap ftco-animate">
                                 <div class="block-18">
                                     <div class="text d-flex align-items-center">
-                                        <strong class="number" data-number="200">0</strong>
+                                        <strong class="number" data-number="{{$profile->finished}}">0</strong>
                                         <span>Finished Photosessions</span>
                                     </div>
                                 </div>
@@ -59,7 +60,7 @@
                             <div class="col-xl-3 col-md-6 d-flex justify-content-center counter-wrap ftco-animate">
                                 <div class="block-18">
                                     <div class="text d-flex align-items-center">
-                                        <strong class="number" data-number="200">0</strong>
+                                        <strong class="number" data-number="{{$profile->happy}}">0</strong>
                                         <span>Happy Clients</span>
                                     </div>
                                 </div>
@@ -115,4 +116,6 @@
                 </div>
             </div>
         </section>
-@endsection
+    @endsection
+
+@endforeach
