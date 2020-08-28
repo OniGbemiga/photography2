@@ -28,7 +28,7 @@
 <div id="colorlib-page">
     <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
     <aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
-        <h1 id="colorlib-logo"><a href="{{route('index')}}"><span class="img" style="background-image: url({{asset('images/author.jpg')}});"></span>Louie Smith</a></h1>
+        <h1 id="colorlib-logo"><a href="{{route('index')}}"><span class="img" style="background-image: url({{asset('images/author.jpg')}});"></span>{{$profile->name ?? 'Oni Gbenga'}}</a></h1>
         <nav id="colorlib-main-menu" role="navigation">
             <ul>
                 <li  class="colorlib-active"><a href="{{route('index')}}">Home</a></li>
@@ -66,12 +66,14 @@
                     <div class="ftco-footer-widget mb-4 ml-md-4">
                         <h2 class="ftco-heading-2">Recent Photos</h2>
                         <ul class="list-unstyled photo">
-                            <li><a href="#" class="img" style="background-image: url({{asset('images/image_1.jpg')}});"></a></li>
-                            <li><a href="#" class="img" style="background-image: url({{asset('images/image_2.jpg')}});"></a></li>
+                            @foreach ($images->take(6) as $image)                            
+                                <li><a href="/collection" class="img" style="background-image: url({{asset($image->original)}});"></a></li>
+                            @endforeach
+                            {{-- <li><a href="#" class="img" style="background-image: url({{asset('images/image_2.jpg')}});"></a></li>
                             <li><a href="#" class="img" style="background-image: url({{asset('images/image_3.jpg')}});"></a></li>
                             <li><a href="#" class="img" style="background-image: url({{asset('images/image_4.jpg')}});"></a></li>
                             <li><a href="#" class="img" style="background-image: url({{asset('images/image_5.jpg')}});"></a></li>
-                            <li><a href="#" class="img" style="background-image: url({{asset('images/image_6.jpg')}});"></a></li>
+                            <li><a href="#" class="img" style="background-image: url({{asset('images/image_6.jpg')}});"></a></li> --}}
                         </ul>
                     </div>
                 </div>
@@ -92,8 +94,8 @@
                         <h2 class="ftco-heading-2">Have a Questions?</h2>
                         <div class="block-23 mb-3">
                             <ul>
-                                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-                                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+                                <li><span class="icon icon-map-marker"></span><span class="text">{{$profile->address ?? '9 Ayinke Street, Off Ladi-lak Street, Bariga, Lagos'}}</span></li>
+                                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+{{$profile->number ?? '2347038241936'}}</span></a></li>
                                 <li><a href="#"><span class="icon icon-envelope"></span><span class="text"><span class="__cf_email__" data-cfemail="066f686069467f69737462696b676f682865696b">[email&#160;protected]</span></span></a></li>
                             </ul>
                         </div>
@@ -103,7 +105,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <p>
-                        Copyright &copy;<script data-cfasync="false" src="{{asset('cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')}}"></script><script type="d4b2fcfa3cd0ec3d48f153b9-text/javascript">document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank">Colorlib</a>
+                        Copyright &copy;<script data-cfasync="false" src="{{asset('cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')}}"></script><script type="d4b2fcfa3cd0ec3d48f153b9-text/javascript">document.write(new Date().getFullYear());</script> All rights reserved
                     </p>
                 </div>
             </div>

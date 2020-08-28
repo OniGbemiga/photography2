@@ -21,20 +21,24 @@ class PagesController extends Controller
         return view('pages.about')->with('profiles',$profiles);
     }
 
-    public function blog(){
-        return view('pages.blog');
-    }
+    // public function blog(){
+
+    //     return view('pages.blog');
+    // }
 
     public function collection(){
+        $profiles = Profile::all();
         $images = Gallery::latest()->paginate(24, ['*'], 'pictures_per_page');
-        return view('pages.collection')->with('images',$images);
+        return view('pages.collection',compact('profiles','images'));
     }
 
     public function contact(){
-        return view('pages.contact');
+        $profiles = Profile::all();
+        return view('pages.contact')->with('profiles',$profiles);
     }
 
     public function services(){
-        return view('pages.services');
+        $profiles = Profile::all();
+        return view('pages.services')->with('profiles',$profiles);
     }
 }

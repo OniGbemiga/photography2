@@ -33,15 +33,6 @@
                                 <a href="#" class="tag-cloud-link">Travel</a>
                             </div>
                         </div>
-                        <div class="about-author d-flex p-4 bg-light">
-                            <div class="bio mr-5">
-                                <img src="{{asset('images/person_1.jpg')}}" alt="Image placeholder" class="img-fluid mb-4">
-                            </div>
-                            <div class="desc">
-                                <h3>George Washington</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
-                            </div>
-                        </div>
                         <div class="pt-5 mt-5">
                             <h3 class="mb-5 font-weight-bold">{{count($blogs->comments)}} Comments</h3>
                             <ul class="comment-list">
@@ -136,42 +127,19 @@
                                 <li><a href="#">Photography <span>(7)</span></a></li>
                             </ul>
                         </div>
-                        <div class="sidebar-box ftco-animate">
-                            <h3 class="sidebar-heading">Popular Articles</h3>
-                            <div class="block-21 mb-4 d-flex">
-                                <a class="blog-img mr-4" style="background-image: url({{asset('images/image_1.jpg')}});"></a>
-                                <div class="text">
-                                    <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control</a></h3>
-                                    <div class="meta">
-                                        <div><a href="#"><span class="icon-calendar"></span> Oct. 04, 2018</a></div>
-                                        <div><a href="#"><span class="icon-person"></span> Dave Lewis</a></div>
-                                        <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                        {{-- <div class="sidebar-box ftco-animate">
+                            <h3 class="sidebar-heading">Popular Articles</h3>   
+                                <div class="block-21 mb-4 d-flex">
+                                    <a class="blog-img mr-4" style="background-image: url({{asset('storage/'.$blogs->blog_image)}});"></a>
+                                    <div class="text">
+                                        <h3 class="heading"><a href="blogs/{{$blogs->id}}">{{$blogs->title}}</a></h3>
+                                        <div class="meta">
+                                            <div><a href="blogs/{{$blogs->id}}"><span class="icon-calendar"></span> {{$blogs->created_at}}</a></div>
+                                            <div><a href="blogs/{{$blogs->id}}"><span class="icon-chat"></span> {{count($blogs->comments)}}</a></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="block-21 mb-4 d-flex">
-                                <a class="blog-img mr-4" style="background-image: url({{asset('images/image_2.jpg')}});"></a>
-                                <div class="text">
-                                    <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control</a></h3>
-                                    <div class="meta">
-                                        <div><a href="#"><span class="icon-calendar"></span> Oct. 04, 2018</a></div>
-                                        <div><a href="#"><span class="icon-person"></span> Dave Lewis</a></div>
-                                        <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="block-21 mb-4 d-flex">
-                                <a class="blog-img mr-4" style="background-image: url({{asset('images/image_3.jpg')}});"></a>
-                                <div class="text">
-                                    <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control</a></h3>
-                                    <div class="meta">
-                                        <div><a href="#"><span class="icon-calendar"></span> Oct. 04, 2018</a></div>
-                                        <div><a href="#"><span class="icon-person"></span> Dave Lewis</a></div>
-                                        <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </div> --}}
                         <div class="sidebar-box ftco-animate">
                             <h3 class="sidebar-heading">Tag Cloud</h3>
                             <ul class="tagcloud">

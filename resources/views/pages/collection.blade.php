@@ -2,7 +2,7 @@
 
 @section('content')
 
-
+@foreach($profiles as $profile)
     <div id="colorlib-main">
         <section class="ftco-section ftco-bread">
             <div class="container">
@@ -34,5 +34,5 @@
                 </div>
             </div>
         </section>
-
+@endforeach
 @endsection

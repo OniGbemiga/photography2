@@ -2,7 +2,6 @@
 
 @section('content')
 
-
     <div id="colorlib-main">
         <section class="ftco-section ftco-bread">
             <div class="container">
@@ -69,39 +68,18 @@
                         </div>
                         <div class="sidebar-box ftco-animate">
                             <h3 class="sidebar-heading">Popular Articles</h3>
-                            <div class="block-21 mb-4 d-flex">
-                                <a class="blog-img mr-4" style="background-image: url({{asset('images/image_1.jpg')}});"></a>
-                                <div class="text">
-                                    <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control</a></h3>
-                                    <div class="meta">
-                                        <div><a href="#"><span class="icon-calendar"></span> Dec. 14, 2018</a></div>
-                                        <div><a href="#"><span class="icon-person"></span> Dave Lewis</a></div>
-                                        <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                            @foreach ($blogs->take(3) as $blog)    
+                                <div class="block-21 mb-4 d-flex">
+                                    <a class="blog-img mr-4" style="background-image: url({{asset('storage/'.$blog->blog_image)}});"></a>
+                                    <div class="text">
+                                        <h3 class="heading"><a href="blogs/{{$blog->id}}">{{$blog->title}}</a></h3>
+                                        <div class="meta">
+                                            <div><a href="blogs/{{$blog->id}}"><span class="icon-calendar"></span> {{$blog->created_at}}</a></div>
+                                            <div><a href="blogs/{{$blog->id}}"><span class="icon-chat"></span> {{count($blog->comments)}}</a></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="block-21 mb-4 d-flex">
-                                <a class="blog-img mr-4" style="background-image: url({{asset('images/image_2.jpg')}});"></a>
-                                <div class="text">
-                                    <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control</a></h3>
-                                    <div class="meta">
-                                        <div><a href="#"><span class="icon-calendar"></span> Dec. 14, 2018</a></div>
-                                        <div><a href="#"><span class="icon-person"></span> Dave Lewis</a></div>
-                                        <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="block-21 mb-4 d-flex">
-                                <a class="blog-img mr-4" style="background-image: url({{asset('images/image_3.jpg')}});"></a>
-                                <div class="text">
-                                    <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control</a></h3>
-                                    <div class="meta">
-                                        <div><a href="#"><span class="icon-calendar"></span> Dec. 14, 2018</a></div>
-                                        <div><a href="#"><span class="icon-person"></span> Dave Lewis</a></div>
-                                        <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                         <div class="sidebar-box ftco-animate">
                             <h3 class="sidebar-heading">Tag Cloud</h3>
