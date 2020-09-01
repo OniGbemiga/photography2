@@ -76,10 +76,19 @@
                         </div>
                         <!-- /.card-footer -->
                         <div class="card-footer">
-                            <form action="#" method="post">
+                            <form action="{{route('comment')}}" method="post">
+                                @csrf
                                 <!-- .img-push is used to add margin to elements next to floating images -->
                                 <div class="img-push">
-                                    <input type="text" class="form-control form-control-sm" placeholder="Press enter to post comment">
+                                    <input type="text" name="message" class="form-control form-control-sm @error('message') is-invalid @enderror" placeholder="Press enter to post comment" required>
+                                    <input name="blog_id" type="hidden" value="{{$blog->id}}">
+                                    <input name="name" type="hidden" value="{{$user->name}}">
+                                    <input name="email" type="hidden" value="{{$user->email}}">
+                                    @error('message')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </form>
                         </div>
