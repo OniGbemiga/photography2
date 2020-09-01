@@ -6,6 +6,7 @@ use Faker\Provider\Image;
 use Illuminate\Http\Request;
 use App\Blog;
 use App\Profile;
+use App\Gallery;
 use Illuminate\Support\Facades\Storage;
 
 class BlogsController extends Controller
@@ -19,7 +20,8 @@ class BlogsController extends Controller
     {
         //$blogs = Blog::count_all();
         $blogs = Blog::latest()->paginate(8, ['*'], 'blog_page');
-        return view('pages.blog')->with('blogs',$blogs);
+        $images = Gallery::all();
+        return view('pages.blog')->with('blogs',$blogs)->with('images',$images);
     }
 
 
@@ -32,7 +34,8 @@ class BlogsController extends Controller
     public function show($id)
     {
         $blog = Blog::find($id);
-        return view('blogs.show')->with('blogs', $blog);
+        $images = Gallery::all();
+        return view('blogs.show')->with('blogs', $blog)->with('images',$images);
     }
 
 }

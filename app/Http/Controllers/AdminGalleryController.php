@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use App\Gallery;
+use App\User;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Auth;
 
 class AdminGalleryController extends Controller
 {
@@ -19,7 +21,9 @@ class AdminGalleryController extends Controller
     public function adminGallery(){
 
         $images = Gallery::latest()->paginate(30, ['*'], 'pages_per_pictures');
-        return view('/admin/gallery')->with('images',$images);
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        return view('/admin/gallery')->with('images',$images)->with('user',$user);
     }
 
 

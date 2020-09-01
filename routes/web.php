@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +19,14 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/admin', function () {
-   return view('admin.dashboard');
+   $id = Auth::user()->id;
+        $user = User::find($id);
+   return view('admin.dashboard')->with('user',$user);
 })->middleware('auth');
 Route::get('/admin/calender', function () {
-   return view('admin.calender');
+   $id = Auth::user()->id;
+        $user = User::find($id);
+   return view('admin.calender')->with('user',$user);
 });
 // Route::get('/admin/profile', function () {
 //    return view('admin.profile');

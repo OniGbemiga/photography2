@@ -59,58 +59,53 @@
 
 
 
-    <footer class="ftco-footer ftco-bg-dark ftco-section">
-        <div class="container px-md-5">
-            <div class="row mb-5">
-                <div class="col-md">
-                    <div class="ftco-footer-widget mb-4 ml-md-4">
-                        <h2 class="ftco-heading-2">Recent Photos</h2>
-                        <ul class="list-unstyled photo">
-                            @foreach ($images->take(6) as $image)                            
-                                <li><a href="/collection" class="img" style="background-image: url({{asset($image->original)}});"></a></li>
-                            @endforeach
-                            {{-- <li><a href="#" class="img" style="background-image: url({{asset('images/image_2.jpg')}});"></a></li>
-                            <li><a href="#" class="img" style="background-image: url({{asset('images/image_3.jpg')}});"></a></li>
-                            <li><a href="#" class="img" style="background-image: url({{asset('images/image_4.jpg')}});"></a></li>
-                            <li><a href="#" class="img" style="background-image: url({{asset('images/image_5.jpg')}});"></a></li>
-                            <li><a href="#" class="img" style="background-image: url({{asset('images/image_6.jpg')}});"></a></li> --}}
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md">
-                    <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Archives</h2>
-                        <ul class="list-unstyled categories">
-                            <li><a href="#">November 2018 <span>(105)</span></a></li>
-                            <li><a href="#">October 2018 <span>(212)</span></a></li>
-                            <li><a href="#">September 2018 <span>(150)</span></a></li>
-                            <li><a href="#">August 2018 <span>(100)</span></a></li>
-                            <li><a href="#">July 2018 <span>(200)</span></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md">
-                    <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Have a Questions?</h2>
-                        <div class="block-23 mb-3">
-                            <ul>
-                                <li><span class="icon icon-map-marker"></span><span class="text">{{$profile->address ?? '9 Ayinke Street, Off Ladi-lak Street, Bariga, Lagos'}}</span></li>
-                                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+{{$profile->number ?? '2347038241936'}}</span></a></li>
-                                <li><a href="#"><span class="icon icon-envelope"></span><span class="text"><span class="__cf_email__" data-cfemail="066f686069467f69737462696b676f682865696b">[email&#160;protected]</span></span></a></li>
+        <footer class="ftco-footer ftco-bg-dark ftco-section">
+            <div class="container px-md-5">
+                <div class="row mb-5">
+                    <div class="col-md">
+                        <div class="ftco-footer-widget mb-4 ml-md-4">
+                            <h2 class="ftco-heading-2">Recent Photos</h2>
+                            <ul class="list-unstyled photo">
+                                @foreach ($images->take(6) as $image)                            
+                                    <li><a href="/collection" class="img" style="background-image: url({{asset($image->original)}});"></a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
+                    <div class="col-md">
+                        <div class="ftco-footer-widget mb-4">
+                            <h2 class="ftco-heading-2">Archives</h2>
+                            <ul class="list-unstyled categories">
+                                <li><a href="#">November 2018 <span>(105)</span></a></li>
+                                <li><a href="#">October 2018 <span>(212)</span></a></li>
+                                <li><a href="#">September 2018 <span>(150)</span></a></li>
+                                <li><a href="#">August 2018 <span>(100)</span></a></li>
+                                <li><a href="#">July 2018 <span>(200)</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="ftco-footer-widget mb-4">
+                            <h2 class="ftco-heading-2">Have a Questions?</h2>
+                            <div class="block-23 mb-3">
+                                <ul>
+                                    <li><span class="icon icon-map-marker"></span><span class="text">{{$profile->address ?? '9 Ayinke Street, Off Ladi-lak Street, Bariga, Lagos'}}</span></li>
+                                    <li><a href="#"><span class="icon icon-phone"></span><span class="text">+{{$profile->number ?? '2347038241936'}}</span></a></li>
+                                    <li><a href="#"><span class="icon icon-envelope"></span><span class="text"><span class="__cf_email__" data-cfemail="066f686069467f69737462696b676f682865696b">[email&#160;protected]</span></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>
+                            Copyright &copy;<script data-cfasync="false" src="{{asset('cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')}}"></script><script type="d4b2fcfa3cd0ec3d48f153b9-text/javascript">document.write(new Date().getFullYear());</script> All rights reserved
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <p>
-                        Copyright &copy;<script data-cfasync="false" src="{{asset('cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')}}"></script><script type="d4b2fcfa3cd0ec3d48f153b9-text/javascript">document.write(new Date().getFullYear());</script> All rights reserved
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
+        </footer>
 </div>
 </div>
 

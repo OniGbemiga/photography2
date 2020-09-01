@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Faker\Provider\Image;
 use App\Blog;
+use App\User;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class AdminFormController extends Controller
 {
@@ -17,11 +19,15 @@ class AdminFormController extends Controller
 
     public function adminPost(){
         $blogs = Blog::latest()->get();
-        return view('admin.post')->with('blogs',$blogs);
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        return view('admin.post')->with('blogs',$blogs)->with('user',$user);
     }
 
     public function adminCreate(){
-        return view('admin.form.create');
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        return view('admin.form.create')->with('user',$user);
     }
 
     public function adminStore()
@@ -33,12 +39,16 @@ class AdminFormController extends Controller
 
     public function adminEditDelete(){
         $blogs = Blog::latest()->paginate(8, ['*'], 'posts_per_page');
-        return view('admin.form.edit_delete')->with('blogs',$blogs);
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        return view('admin.form.edit_delete')->with('blogs',$blogs)->with('user',$user);
     }
 
     public function adminEditPost($id){
         $blogs = Blog::find($id);
-        return view('admin.form.edit_post')->with('blogs',$blogs);
+        $ids = Auth::user()->id;
+        $user = User::find($ids);
+        return view('admin.form.edit_post')->with('blogs',$blogs)->with('user',$user);
     }
 
     public function adminUpdatePost(Blog $blog, $id){

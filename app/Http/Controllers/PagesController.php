@@ -11,14 +11,16 @@ class PagesController extends Controller
 {
     public function index(){
         $profiles = Profile::all();
-        return view('pages.index')->with('profiles',$profiles);
+        $images = Gallery::all();
+        return view('pages.index')->with('profiles',$profiles)->with('images',$images);
     }
 
     public function about(){
 
         $profiles = Profile::all();
+        $images = Gallery::all();
         //dd($profiles);
-        return view('pages.about')->with('profiles',$profiles);
+        return view('pages.about')->with('profiles',$profiles)->with('images',$images);
     }
 
     // public function blog(){
@@ -34,11 +36,13 @@ class PagesController extends Controller
 
     public function contact(){
         $profiles = Profile::all();
-        return view('pages.contact')->with('profiles',$profiles);
+        $images = Gallery::all();
+        return view('pages.contact')->with('profiles',$profiles)->with('images',$images);
     }
 
     public function services(){
         $profiles = Profile::all();
-        return view('pages.services')->with('profiles',$profiles);
+        $images = Gallery::all();
+        return view('pages.services')->with('profiles',$profiles)->with('images',$images);
     }
 }
