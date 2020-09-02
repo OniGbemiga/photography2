@@ -67,7 +67,7 @@
 <!-- Automatic element centering -->
 <div class="lockscreen-wrapper">
   <div class="lockscreen-logo">
-    <a href="/admin"><b>Admin</b>LTE</a>
+    <b>Admin</b>Dashboard
   </div>
   <!-- User name -->
   <div class="lockscreen-name">{{$users->profile->name}}</div>
@@ -107,10 +107,6 @@
   </div>
   <div class="text-center">
     <a href="/admin/auth/login">Or sign in as a different user</a>
-  </div>
-  <div class="lockscreen-footer text-center">
-    Copyright &copy; 2014-2020 <b><a href="https://adminlte.io" class="text-black">AdminLTE.io</a></b><br>
-    All rights reserved
   </div>
 </div>
 <!-- /.center -->

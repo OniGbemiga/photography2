@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Comment;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,13 +42,16 @@ Route::get('/admin/calender', function () {
 //    return view('admin.lockscreen');
 // });
 Route::get('/admin/contact', function () {
-   return view('admin.contact');
+   $id = Auth::user()->id;
+        $user = User::find($id);
+        $comments = Comment::all();
+   return view('admin.contact')->with('user',$user)->with('comments',$comments);
 });
 
 //AdminRegister
 Route::get('/admin/auth/login', 'AdminLoginController@loginForm');
 Route::post('login', 'AdminLoginController@login')->name('login');
-Route::get('/admin/auth/register', 'AdminRegisterController@registerForm');
+Route::get('/admin/auth/register', 'AdminRegisterController@registerForm')->middleware(['auth', 'password.confirm']);
 Route::post('register', 'AdminRegisterController@register')->name('register');
 Route::get('/logout', 'AdminLoginController@logout')->name('logout');
 
