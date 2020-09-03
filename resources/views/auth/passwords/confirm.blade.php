@@ -70,13 +70,13 @@
     <b>Admin</b>Dashboard
   </div>
   <!-- User name -->
-  <div class="lockscreen-name">{{$users->profile->name}}</div>
+  <div class="lockscreen-name">{{Auth::user()->profile->name}}</div>
 
   <!-- START LOCK SCREEN ITEM -->
   <div class="lockscreen-item">
     <!-- lockscreen image -->
     <div class="lockscreen-image">
-      <img src="/storage/profile_image/{{$users->profile->image}}" alt="User Image">
+      <img src="/storage/profile_image/{{Auth::user()->profile->image}}" alt="User Image">
     </div>
     <!-- /.lockscreen-image -->
 
