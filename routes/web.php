@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Comment;
+use App\Newsletter;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,10 +43,11 @@ Route::get('/admin/calender', function () {
 //    return view('admin.lockscreen');
 // });
 Route::get('/admin/contact', function () {
-   $id = Auth::user()->id;
+        $id = Auth::user()->id;
         $user = User::find($id);
-        $comments = Comment::all();
-   return view('admin.contact')->with('user',$user)->with('comments',$comments);
+        $newsletters = Newsletter::get();
+        //dd($newsletter);
+   return view('admin.contact')->with('user',$user)->with('newsletters',$newsletters);
 });
 
 //AdminRegister
@@ -95,6 +97,9 @@ Route::post('contacts', 'ContactController@store')->name('contactus');
 
 //Comments
 Route::post('/comments', 'CommentController@commentStore')->name('comment');
+
+//Newsletter
+Route::post('newsletter', 'NewsletterController@letters')->name('letter');
 
 Auth::routes();
 

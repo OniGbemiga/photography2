@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Faker\Provider\Image;
+//use Faker\Provider\Image;
 use App\Blog;
 use App\User;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
 
 class AdminFormController extends Controller
 {
@@ -78,7 +79,7 @@ class AdminFormController extends Controller
             $blog->update([
                 'blog_image' => request()->blog_image->store('uploads' , 'public'),
             ]);
-            $blog_image = \Intervention\Image\Facades\Image::make(public_path('storage/' . $blog->blog_image));
+            $blog_image = Image::make(public_path('storage/' . $blog->blog_image));
                 //->fit(800,500);
             $blog_image->save();
         }

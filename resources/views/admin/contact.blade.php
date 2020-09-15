@@ -34,16 +34,16 @@
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Name</th>
+                    {{-- <th>Name</th> --}}
                     <th>Email</th>
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach ($comments as $comment)    
-                  <tr>
-                    <td>{{$comment->id}}</td>
-                    <td>{{$comment->name}}</td>
-                    <td>{{$comment->email}}</td>
+                  @foreach ($newsletters as $newsletter)    
+                    <tr>
+                      <td>{{$newsletter->id}}</td>
+                      {{-- <td>{{$comment->name}}</td> --}}
+                      <td>{{$newsletter->emailletter}}</td>
                     </tr>
                   @endforeach
                 </tbody>

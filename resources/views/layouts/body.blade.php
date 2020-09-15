@@ -42,10 +42,16 @@
         <div class="colorlib-footer">
             <h3>Newsletter</h3>
             <div class="d-flex justify-content-center">
-                <form action="#" class="colorlib-subscribe-form">
+                <form action="{{route('letter')}}" class="colorlib-subscribe-form" method="POST">
+                    @csrf
                     <div class="form-group d-flex">
                         <div class="icon"><span class="icon-paper-plane"></span></div>
-                        <input type="text" class="form-control" placeholder="Enter Email Address">
+                        <input type="email" class="form-control @error('emailletter') is-invalid @enderror" placeholder="Enter Email Address" name="emailletter" autocomplete="emailletter">
+                        @error('emailletter')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </form>
             </div>

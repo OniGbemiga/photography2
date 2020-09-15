@@ -157,10 +157,16 @@
                             <div class="overlay"></div>
                             <h3 class="mb-4 sidebar-heading">Newsletter</h3>
                             <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia</p>
-                            <form action="#" class="subscribe-form">
+                            <form action="{{route('letter')}}" class="subscribe-form" method="POST" enctype="multipart/form-data">
+                                @csrf
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Email Address">
+                                    <input type="email" class="form-control @error('emailletter') is-invalid @enderror" placeholder="Email Address" name="emailletter" required autocomplete="emailletter">
                                     <input type="submit" value="Subscribe" class="mt-2 btn btn-white submit">
+                                    @error('emailletter')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </form>
                         </div>
