@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Newsletter;
 use App\Mail\NewsletterMail;
 use Illuminate\Support\Facades\Mail;
+use App\Providers\NewClientHasRegisteredNewsletterEvent;
+
 
 class NewsletterController extends Controller
 {
@@ -21,7 +23,7 @@ class NewsletterController extends Controller
         $newsletter->emailletter = $request->input('emailletter');
         $newsletter->save();
 
-        Mail::to($newsletter->emailletter)->send(new NewsletterMail());
+        event(new NewClientHasRegisteredNewsletterEvent($newsletter));
 
         return back();
     }

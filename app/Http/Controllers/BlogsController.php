@@ -31,9 +31,9 @@ class BlogsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($blog)
     {
-        $blog = Blog::find($id);
+        $blog = Blog::where('id',$blog)->firstOrFail();
         $images = Gallery::all();
         return view('blogs.show')->with('blogs', $blog)->with('images',$images);
     }
