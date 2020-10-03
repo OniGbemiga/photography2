@@ -32,15 +32,24 @@
                 <h3 class="card-title">List Of Blog Posts</h3>
 
                 <div class="card-tools">
+                  <form action="/admin/form/edit_delete" method="GET">
                   <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default">
-                        <i class="fas fa-search"></i>
-                      </button>
+                      @csrf
+                      <input type="text" name="term" class="form-control float-right" placeholder="Search">
+                      <div class="input-group-append">
+                        <button type="submit" class="btn btn-default">
+                          <i class="fas fa-search"></i>
+                        </button>
+                      </div>
+                      <a href="/admin/form/edit_delete" class="mt-1">
+                        <span class="input-group-btn">
+                            <button class="btn btn-dangger">
+                                <span class="fas fa-sync-alt"></span>
+                            </button>
+                        </span>
+                    </a>
                     </div>
-                  </div>
+                  </form>
                 </div>
               </div>
               <!-- /.card-header -->

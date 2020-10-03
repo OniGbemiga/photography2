@@ -30,6 +30,6 @@ class ContactController extends Controller
         $contact->message = $request->input('message');
         $contact->save();
 
-        return redirect('/')->with('success','We will get back to you');
+        return back()->with('message','We will get back to you');
     }
 }

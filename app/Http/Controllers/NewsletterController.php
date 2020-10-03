@@ -24,7 +24,7 @@ class NewsletterController extends Controller
         $newsletter->save();
 
         event(new NewClientHasRegisteredNewsletterEvent($newsletter));
-
-        return back();
+        //session::flash('message', 'Thank you');
+        return back()->with('message', 'Thank you for Subscribing');
     }
 }

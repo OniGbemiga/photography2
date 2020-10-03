@@ -26,6 +26,11 @@
 </head>
 <body>
 <div id="colorlib-page">
+    @if (session()->has('message'))
+        <div class="alert alert-success" role="alert">
+            <strong> Success </strong> {{ session()->get('message') }}
+        </div>
+    @endif
     <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
     <aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
         <h1 id="colorlib-logo"><a href="{{route('index')}}"><span class="img" style="background-image: url({{asset('images/author.jpg')}});"></span>{{$profile->name ?? 'Oni Gbenga'}}</a></h1>

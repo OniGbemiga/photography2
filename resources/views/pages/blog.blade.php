@@ -18,9 +18,7 @@
                 <div class="row d-flex">
                     <div class="col-lg-8">
                         <div class="row">
-
                             @foreach($blogs as $blog)
-
                                 <div class="col-md-12">
                                     <div class="blog-entry ftco-animate d-md-flex">
                                         <a href="blogs/{{$blog->id}}" class="img img-2" style="background-image: url({{asset('storage/'.$blog->blog_image)}});"></a>
@@ -40,7 +38,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             @endforeach
                         </div>
                         <div class="col-12 d-flex justify-content-center">
@@ -49,10 +46,18 @@
                     </div>
                     <div class="col-lg-4 sidebar ftco-animate bg-light">
                         <div class="sidebar-box">
-                            <form action="#" class="search-form">
+                            <form action="/blogs" class="search-form" method="GET" role="search">
+                                {{-- @csrf --}}
                                 <div class="form-group">
                                     <span class="icon icon-search"></span>
-                                    <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
+                                    <input type="text" class="form-control" placeholder="Type a keyword and hit enter" name="term">
+                                    <a href="/blogs" class="mt-1">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-dangger">
+                                                <span class="glyphicon glyphicon-refresh"></span>
+                                            </button>
+                                        </span>
+                                    </a>
                                 </div>
                             </form>
                         </div>

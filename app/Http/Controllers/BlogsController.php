@@ -16,12 +16,25 @@ class BlogsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //$blogs = Blog::count_all();
-        $blogs = Blog::latest()->paginate(8, ['*'], 'blog_page');
+
         $images = Gallery::all();
-        return view('pages.blog')->with('blogs',$blogs)->with('images',$images);
+        $blogs = Blog::where([
+            ['title', '!=', Null],
+            [function ($query) use ($request){
+                if (($term = $request->term)) {
+                    $query->orWhere('title', 'LIKE', '%' . $term . '%')->get();
+                }
+            }]
+        ])
+        ->orderBy('id', 'desc')
+        ->paginate(8, ['*'], 'blog_page');
+        //$blogs = Blog::count_all();
+        //$blogs = Blog::latest()->paginate(8, ['*'], 'blog_page');
+        return view('pages.blog')
+        ->with('blogs',$blogs)
+        ->with('images',$images);
     }
 
 

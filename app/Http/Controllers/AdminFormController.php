@@ -38,8 +38,21 @@ class AdminFormController extends Controller
         return redirect('admin/form/edit_delete')->with('Successful');
     }
 
-    public function adminEditDelete(){
-        $blogs = Blog::latest()->paginate(8, ['*'], 'posts_per_page');
+    public function adminEditDelete(Request $request)
+    {
+        
+        //$blogs = Blog::latest()->paginate(8, ['*'], 'posts_per_page');
+        $blogs = Blog::where([
+            ['title', '!=', Null],
+            [function ($query) use ($request){
+                if (($term = $request->term)) {
+                    $query->orWhere('title', 'LIKE', '%' . $term . '%')->get();
+                }
+                //dd($term);
+            }]
+        ])
+        ->orderBy('id', 'desc')
+        ->paginate(10);
         $id = Auth::user()->id;
         $user = User::find($id);
         return view('admin.form.edit_delete')->with('blogs',$blogs)->with('user',$user);
